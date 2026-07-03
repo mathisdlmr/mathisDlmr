@@ -1,63 +1,275 @@
 # Heyyyy, moi c'est Mathis Delmaere 👋
 
-Salut ! Moi c’est **Mathis Delmaere**, étudiant en génie informatique à l'**Université de Technologie de Compiègne (UTC)**, filière **Ingénierie des Systèmes Informatiques**.
+Salut ! Moi c'est **Mathis Delmaere**, étudiant en génie informatique à l'**Université de Technologie de Compiègne (UTC)**, filière **Ingénierie des Systèmes Informatiques (ISI)** (Promo 2022)
 
-Je code pas mal pour le fun, pour apprendre, pour filer un coup de main… et surtout parce que j'aime bien essayer de faire des trucs pour faciliter la vie des assos ou proposer des anims ^^
-
-Ici, tu trouveras donc un peu de tout : des projets persos, des contributions associatives, des trucs pour les cours, et même quelques projets de hackathons 
+Je code majoritairement pour apprendre, découvrir de nouvelles technos et systèmes informatiques (que ça soit niveau backend, infra ou réseau), ou encore pour des associations de mon école.
 
 ---
 
-## 🏛️ Vie associative à l'UTC
+## 💼 Expérience professionnelle
 
-Depuis mon arrivée, je me suis pas mal impliqué dans les assos :
+### Ingénieur SRE DevOps - [Padoa](https://www.padoa.fr) *(Stage)*
 
-- **Integ Fev *(Printemps 2023)*** — Site web vitrine en `HTML/CSS/JS`, debug sur l'app `Flutter`
-- **Integ *(Automne 2023)*** — Site vitrine en `Tailwind CSS`, features & debug sur l'app `Expo` et le serveur `Laravel`
-- **Ski'UT *(Printemps 2024 - Automne 2024)*** — Nouvelle app en `Expo` + nouveau serveur `Laravel`
-- **SiMDE *(Printemps 2025)*** — Webapp pour la gestion des CATs avec `Filament` 
-- **Pic'Asso *(Printemps 2025)*** — Features et debug du backoffice `Filament`, idem pour l'app des bornes de paiement `React`, et… plein de petits projets avec l'infra et les rasp du Pic (mais pour voir ça il faut y passer ^^)
-- **Ski'UT *(Printemps 2025 - Automne 2025)*** — Retour à Ski'UT pour finir mon travail (sortir quelques nouvelles features, debug et optimisation) + documenter à fond et rendre le code open-source (histoire d'avoir quelques chose de péren et dont les assos peuvent s'inspirer)
-- **Coming Soon** - Projet personnel de développement d'un cluster k3s sur un n150. L'objectif est de pouvoir supporter l'hébergement de mes projets personnels (Ski'ut, Cv web, sr10) ainsi que des environnement de dev et staging utilisant de la CI/CD
+Infra & DevOps dans une scale-up française de santé au travail
+- **Kubernetes/ArgoCD** : maintenance et évolution des clusters kubernetes multi-environnements
+- **Monitoring** : Grafana, Prometheus, Thanos
+- **CI/CD** : GitHub Actions et pipelines de déploiement
+- **Go** : développement d'outils internes (tooling infra)
+
+---
+
+## 🏫 Vie associative à l'UTC
+
+### Integ Fev *(Printemps 2023)*
+
+Reprise, debug et mise à jour (nouvelles features, nouveau design) d'une app mobile **Flutter** et d'un backend **Laravel** pour une intégration de 1,5 semaine.
+L'application a été utilisée par une ~100aine d'étudiant.e.s et servait essentiellement à proposer des animations et gérer l'organisation de la semaine d'intégration.
+
+---
+
+### Integ *(Automne 2023)*
+
+Reprise, debug et mise à jour (nouvelles features, nouveau design) d'une app mobile **Expo** et d'un backend Laravel pour une intégration de 2 semaines.
+L'application a été utilisée par >1000 étudiant.e.s et comptait encore plus de fonctionnalités que celle de l'integ fev : réservation de repas, file d'attente virtuelle, réservation de navette, scanner de QR code, etc.
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+<img src="./images/integ/integ1.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ2.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ3.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ4.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ5.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ6.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
+</p>
+
+_Ces screenshot sont issus de la version de l'application sur laquelle j'ai commencé à travailler, mais ce développement avait été effectué par Géo SAGLIO l'année précédent mon arrivée dans l'association_ 
+
+---
+
+### [Ski'UT](https://github.com/ski-utc) *(2024 -> 2025)*
+
+Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'une application mobile **Expo** et d'un backend **Laravel** pour gérer l'organisation d'un voyage au ski pour ~500 étudiant.e.s et proposer des animations tout au long de la semaine
+* **Backend** [ski-utc/server-skiut-2026](https://github.com/ski-utc/server-skiut-2026) : Serveur Laravel/Filament pour toute l'organisation du voyage (réservations, planning, navettes…)
+* **App mobile** : [ski-utc/app-skiut-2026](https://github.com/ski-utc/app-skiut-2026) : App Expo avec défis, planning, anecdotes, plan du domaine, navettes, notifications push, export/anonymisation RGPD, etc.
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+<img src="./images/skiut2025/skiut2.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut3.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut4.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut5.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut6.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
+</p>
+
+<a href="./files/skiut2025.pdf" download>Télécharger la présentation du projet</a>
+
+---
+
+### [Ski'UT V2](https://github.com/ski-utc) *(2025 -> 2026)*
+
+Redéveloppement sur mon projet de l'époque, cette fois seul, pour stabiliser le projet et le rendre pérenne : 
+* CI/CD sur le frontend et le backend
+  * Dockerization + Pipeline de tests unitaires pour le backend
+  * ESLint + Prettier pour le frontend 
+* Déploiement du backend dans des containers docker auto-hébergés sur mon serveur kubernetes personnel
+* Intégration de métriques et de traces dans le backend, récupérés par la suite par l'agent Alloy dans le cluster
+* Rédaction de documentation pour expliquer le fonctionnement du projet et donner des bonnes pratiques à suivre
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+<img src="./images/skiut2026/skiut1.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut2.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut3.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut4.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut5.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut6.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
+</p>
+
+Le projet a par la suite entièrement tourné sur mon serveur kubernetes, et a tenu des pics de charge à >10k reqs/sec lors de certaines réservations à des évènements.
+Pour çela le projet a grandement profité d'une infrastructure réseau mature avec Cloudflare -> Tunnel Cloudfalre -> Traefik in-cluster -> Load balancing sur 2 containers Docker avec un HPA en cas de grosse charge
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+<img src="./images/skiut2026/shotgun.png" height="300" alt="Screenshot du shotgun de Skiut 2026" />
+</p>
+
+---
+
+### [Le Pic'Asso](https://github.com/picasso-utc) *(Printemps 2025)*
+
+Bar et foyer étudiant de l'UTC dans lequel j'ai travaillé à la maintenance des systèmes informatique utilisés et au développement de nouvelles features pour les équipes de trésorerie et pour des animations
+
+* **Ocktopus** [picasso-utc/ocktopus](https://github.com/picasso-utc/ocktopus) : Backend Laravel/Filament pour l'organisation de l'association et les services de trésorerie + API pour l'app mobile
+* **Bach** [picasso-utc/bach](https://github.com/picasso-utc/bach) : Borne de paiement en React installée sur des Raspberry Pi, avec badgeuse NFC pour les cartes étudiantes et intégration Weezpay
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+<img src="./images/pic/ocktopus1.png" height="150" alt="Screenshot de l'interface admin du Pic" />
+<img src="./images/pic/ocktopus2.png" height="150" alt="Screenshot de l'interface admin du Pic" />
+</p>
+
+TODO : screenshot des bornes
+
+---
+
+### [SiMDE](https://assos.utc.fr/simde/) *(Printemps 2025, Printemps 2026)*
+
+Service Informatique de la Maison des Étudiants - hébergement et infra pour les >100 associations de la fédération BDE-UTC.
+
+- **UTCats** : webapp Filament pour la gestion des CATs - [mathisdlmr/UTCats](https://github.com/mathisdlmr/UTCats)
+- Debug et développement sur des projets d'infrastructure (majoritairement privés)
+- Participation à la migration **nginx/Apache -> auto-hébergement k8s** pour passer d'applications uniquement en PHP vers du NodeJS
 
 ---
 
 ## 📚 Projets de cours
 
-Quelques projets que tu peux retrouver ici :
+| Matière | Année | Projet | Description | Stack | Lien |
+|---|---|---|---|---|---|
+| **API Init, Introduction à Linux** | Automne 2023 | Space Invaders | Jeu Space Invaders dans le terminal | `Bash` | [mathisdlmr/Space-Invaders](https://github.com/mathisdlmr/Space-Invaders) |
+| **SR04, Réseaux** | Automne 2023 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE`, `Zigbee`, `AMQP`, `MQTT`, `CoAP` | ... |
+| **SR10, Introduction au dev web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/SR10](https://github.com/mathisdlmr/SR10) |
+| **TX, projets** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
+| **SR03, Architecture des app web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket| Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
+| **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) |
 
-| 📁 Matière | 👨‍💻 Projet | 🛠️ Stack |
-|-----------|----------|----------|
-| **TX Tut'ut** *(Printemps 2024)* | Webapp pour le programme de tutorat Tut'ut | `Filament` |
-| **SR10** *(Printemps 2025)* | Webapp style LinkedIn | `Express.js` |
-| **IA02** *(Printemps 2025)* | Algorithmes IA | `Python` + `Prolog` |
-| **IC05** *(Printemps 2024)* | Scraping Letterboxd | `Python` + `Selenium` |
-| **NF18** *(Printemps 2024)* | BDD relationnelle & NoSQL | `Python` + `SQL` |
+---
 
+### SR04
+
+<a href="./files/sr04.pdf" download>Télécharger la présentation du projet</a>
+
+---
+
+### TX
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/tutut/tutut1.png" height="150" alt="Element de l'interface de Tut'ut" />
+  <img src="./images/tutut/tutut2.png" height="150" alt="Element de l'interface de Tut'ut" />
+</p>
+
+TODO : ajouter des screens ici
+
+---
+
+### SR03
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+<img src="./images/sr03/sr03-1.png" height="100" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-2.png" height="100" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-3.png" height="100" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-4.png" height="100" alt="Element de l'interface du projet de SR03" />
+</p>
+
+-> La majorité du projet porte sur la sécurité de l'application ainsi que l'utilisation de WebSockets.
+
+Pour des questions pratiques le projet embarque un Makefile, Dockefile et CI/CD pour rendre le développement sur le backend Java et frontend React plus agréable.
+
+---
+
+### SR05
+
+<a href="./files/sr05.pdf" download>Télécharger la présentation du projet</a>
 
 ---
 
 ## 🚀 Hackathons
 
-Deux expériences récentes :
+### CultureXP *(Février 2025 - GottaGoHack, Epitech)*
 
-- **CultureXP** *(Fév 2025 – GottaGoHack, Epitech)*  
-  Gamification culturelle en `Expo` pour booster la découverte artistique 🎭
+App mobile de gamification culturelle : carte de lieux culturels (via OpenStreetMap), quêtes, podcasts (via PodcastIndex), livres (via GoogleAPO), boutique d'achat avec l'XP. Un projet développé en 48h
 
-- **Aide-un-étu** *(Juil 2025 – UTC x mc2i)*  
-  Webapp de partage de services et d’objets en `Next.js`, pensée accessibilité ♿ & éco-conception 🌱
+**Stack** : `Expo` · `React Native` · `TypeScript`
+-> [mathisdlmr/CultureXP](https://github.com/mathisdlmr/CultureXP)
+
+<a href="./files/culturexp.pdf" download>Télécharger la présentation du projet</a>
+
+---
+
+### Aide-un-étudiant *(Juillet 2025 - UTC x mc2i)* 🏆 1er prix
+
+Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de services, partage de connaissances. Pensée accessibilité et éco-conception (Server Components, requêtes Prisma optimisées, rendu statique, Score d'Impact Positif).
+
+**Stack** : `Next.js` · `TypeScript` · `Prisma` · `TailwindCSS` · `NextAuth.js`
+-> [mathisdlmr/hackhaton-utc-mc2i](https://github.com/mathisdlmr/hackhaton-utc-mc2i)
+
+<a href="./files/aide-un-etu.pdf" download>Télécharger la présentation du projet</a>
+
+---
+
+## 🏠 Projets personnels
+
+### k3s-project - Homelab k3s HA
+
+Cluster k3s haute disponibilité déployé sur 3 Ordinateurs NUC
+
+**Objectif** : apprendre les pratiques DevOps/SRE en conditions réelles, tout en hébergeant mes projets et en servant d'infra de secours pour les gros événements étudiants.
+
+**Ce qui tourne dessus** : ArgoCD, Traefik, cert-manager, Cloudflared, Longhorn, Grafana, Prometheus, Loki, Alloy, Affine, Immich…
+
+**Cas d'usage réel** : en janvier 2026, le cluster a hébergé le backend du mini-jeu de réservation Ski'UT, avec caching Cloudflare configuré à la main, pour absorber les pics à **10-15k req/s**. En temps normal le cluster héberge mes propres services de TodoList, Notion-Like (Affine), hébergement de photos (Immich), hébergement web...
+
+-> [mathisdlmr/k3s-project](https://github.com/mathisdlmr/k3s-project)
 
 ---
 
 ## ⚙️ Stack & Technos
 
-### ✅ À l’aise avec :
-<p align="left"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="Linux" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="40" alt="Shell" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="Git" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="40" alt="Docker" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="40" alt="PHP" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" height="40" alt="Laravel" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="HTML5" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="CSS3" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="JavaScript" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt="TypeScript" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="React" /> <img src="https://seekicon.com/free-icon-download/expo_1.png" height="40" alt="Expo" /> </p>
+### Langages de programmation
 
-### 🔍 Déjà utilisé :
-<p align="left"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" height="40" alt="Kubernetes" /> <img src="https://www.redhat.com/rhdc/managed-files/helm.svg" height="40" alt="Helm" /> <img src="https://cdn.prod.website-files.com/5f10ed4c0ebf7221fb5661a5/5f2ba11e378c8f49e8b28486_argo.png" height="40" alt="argoCD" /> <img src="https://miro.medium.com/v2/resize:fit:1400/1*7qk0-4XwCKWQO0GU5Hu39w.png" height="40" alt="GitHub Actions" /> <img src="https://forge.inrae.fr/uploads/-/system/project/avatar/6031/gitlab-ci.png" height="40" alt="GitLab CI/CD" /> <img src="https://blog.stephane-robert.info/_astro/logo-terraform.BGfKm2SU_ZLVBFH.webp" height="40" alt="Terraform" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="Node.js" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" alt="Next.js" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height="40" alt="Flutter" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" alt="MySQL" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="40" alt="PostgreSQL" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="MongoDB" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="40" alt="C" /> </p>
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="40" alt="PHP" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="JavaScript" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt="TypeScript" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" height="40" alt="Go" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="40" alt="Bash" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40" alt="Java" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="40" alt="C" />
+</p>
 
-__Coming Soon : ELK, Prometheus, Grafana, Nging, Apache, Traefik, Go__
+### Frameworks & Bibliothèques Web
+
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="React / React Native" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" alt="Next.js" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" height="40" alt="Laravel" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="Node.js" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="40" alt="Spring Boot" />
+<img src="https://seekicon.com/free-icon-download/expo_1.png" height="40" alt="Expo" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" height="40" alt="Flutter" />
+</p>
+
+### DevOps & Infrastructure
+
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="Git" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="40" alt="Docker" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" height="40" alt="Kubernetes" />
+<img src="https://www.redhat.com/rhdc/managed-files/helm.svg" height="40" alt="Helm" />
+<img src="https://cdn.prod.website-files.com/5f10ed4c0ebf7221fb5661a5/5f2ba11e378c8f49e8b28486_argo.png" height="40" alt="ArgoCD" />
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*7qk0-4XwCKWQO0GU5Hu39w.png" height="40" alt="GitHub Actions" />
+<img src="https://forge.inrae.fr/uploads/-/system/project/avatar/6031/gitlab-ci.png" height="40" alt="GitLab CI" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="Linux" />
+</p>
+
+### Observabilité
+
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" height="40" alt="Grafana" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" height="40" alt="Prometheus" />
+</p>
+
+Thanos · Loki · Alloy
+
+### Bases de données
+
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" alt="MySQL" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="40" alt="PostgreSQL" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="MongoDB" />
+</p>
+
+SQLite · Prisma
+
+### Cloud & Réseau
+
+Cloudflare / Cloudflared · Traefik · Nginx · Apache · Terraform · Longhorn
 
 ---
 
@@ -65,9 +277,7 @@ __Coming Soon : ELK, Prometheus, Grafana, Nging, Apache, Traefik, Go__
 
 - 📧 **Email** : [mathis.dlmr@gmail.com](mailto:mathis.dlmr@gmail.com)
 - 💼 **LinkedIn** : [linkedin.com/in/mathis-delmaere-6a6325325](https://www.linkedin.com/in/mathis-delmaere-6a6325325/)
-- 💬 **Messenger** : Mathis Delmaere (`@mathis.delmaere`)
-- 📸 **Instagram** : [@mathis_dlmr](https://www.instagram.com/mathis_dlmr)
 
 ---
 
-Merci d’être passé·e par iciiii 
+Merci d'être passé·e par ici !
