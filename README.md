@@ -33,12 +33,12 @@ Reprise, debug et mise à jour (nouvelles features, nouveau design) d'une app mo
 L'application a été utilisée par >1000 étudiant.e.s et comptait encore plus de fonctionnalités que celle de l'integ fev : réservation de repas, file d'attente virtuelle, réservation de navette, scanner de QR code, etc.
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/integ/integ1.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
-<img src="./images/integ/integ2.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
-<img src="./images/integ/integ3.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
-<img src="./images/integ/integ4.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
-<img src="./images/integ/integ5.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
-<img src="./images/integ/integ6.jpg" height="150" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ1.jpg" height="200" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ2.jpg" height="200" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ3.jpg" height="200" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ4.jpg" height="200" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ5.jpg" height="200" alt="Screenshot de l'application de l'Intégration" />
+<img src="./images/integ/integ6.jpg" height="200" alt="Screenshot de l'application de l'Intégration" />
 </p>
 
 _Ces screenshot sont issus de la version de l'application sur laquelle j'ai commencé à travailler, mais ce développement avait été effectué par Géo SAGLIO l'année précédent mon arrivée dans l'association_ 
@@ -52,11 +52,11 @@ Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'un
 * **App mobile** : [ski-utc/app-skiut-2026](https://github.com/ski-utc/app-skiut-2026) : App Expo avec défis, planning, anecdotes, plan du domaine, navettes, notifications push, export/anonymisation RGPD, etc.
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/skiut2025/skiut2.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
-<img src="./images/skiut2025/skiut3.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
-<img src="./images/skiut2025/skiut4.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
-<img src="./images/skiut2025/skiut5.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
-<img src="./images/skiut2025/skiut6.png" height="150" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut2.png" height="200" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut3.png" height="200" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut4.png" height="200" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut5.png" height="200" alt="Screenshot de l'application de Skiut 2025" />
+<img src="./images/skiut2025/skiut6.png" height="200" alt="Screenshot de l'application de Skiut 2025" />
 </p>
 
 <a href="./files/skiut2025.pdf" download>Télécharger la présentation du projet</a>
@@ -74,12 +74,12 @@ Redéveloppement sur mon projet de l'époque, cette fois seul, pour stabiliser l
 * Rédaction de documentation pour expliquer le fonctionnement du projet et donner des bonnes pratiques à suivre
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/skiut2026/skiut1.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
-<img src="./images/skiut2026/skiut2.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
-<img src="./images/skiut2026/skiut3.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
-<img src="./images/skiut2026/skiut4.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
-<img src="./images/skiut2026/skiut5.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
-<img src="./images/skiut2026/skiut6.png" height="150" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut1.png" height="200" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut2.png" height="200" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut3.png" height="200" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut4.png" height="200" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut5.png" height="200" alt="Screenshot de l'application de Skiut 2026" />
+<img src="./images/skiut2026/skiut6.png" height="200" alt="Screenshot de l'application de Skiut 2026" />
 </p>
 
 Le projet a par la suite entièrement tourné sur mon serveur kubernetes, et a tenu des pics de charge à >10k reqs/sec lors de certaines réservations à des évènements.
@@ -99,8 +99,8 @@ Bar et foyer étudiant de l'UTC dans lequel j'ai travaillé à la maintenance de
 * **Bach** [picasso-utc/bach](https://github.com/picasso-utc/bach) : Borne de paiement en React installée sur des Raspberry Pi, avec badgeuse NFC pour les cartes étudiantes et intégration Weezpay
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/pic/ocktopus1.png" height="150" alt="Screenshot de l'interface admin du Pic" />
-<img src="./images/pic/ocktopus2.png" height="150" alt="Screenshot de l'interface admin du Pic" />
+<img src="./images/pic/ocktopus1.png" height="200" alt="Screenshot de l'interface admin du Pic" />
+<img src="./images/pic/ocktopus2.png" height="200" alt="Screenshot de l'interface admin du Pic" />
 </p>
 
 TODO : screenshot des bornes
@@ -123,7 +123,7 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 |---|---|---|---|---|---|
 | **API Init, Introduction à Linux** | Automne 2023 | Space Invaders | Jeu Space Invaders dans le terminal | `Bash` | [mathisdlmr/Space-Invaders](https://github.com/mathisdlmr/Space-Invaders) |
 | **SR04, Réseaux** | Automne 2023 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE`, `Zigbee`, `AMQP`, `MQTT`, `CoAP` | ... |
-| **SR10, Introduction au dev web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/SR10](https://github.com/mathisdlmr/SR10) |
+| **SR10, Introduction au dev web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
 | **TX, projets** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
 | **SR03, Architecture des app web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket| Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
 | **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) |
@@ -139,8 +139,8 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 ### TX
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/tutut/tutut1.png" height="150" alt="Element de l'interface de Tut'ut" />
-  <img src="./images/tutut/tutut2.png" height="150" alt="Element de l'interface de Tut'ut" />
+  <img src="./images/tutut/tutut1.png" height="200" alt="Element de l'interface de Tut'ut" />
+  <img src="./images/tutut/tutut2.png" height="200" alt="Element de l'interface de Tut'ut" />
 </p>
 
 TODO : ajouter des screens ici
@@ -150,10 +150,10 @@ TODO : ajouter des screens ici
 ### SR03
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/sr03/sr03-1.png" height="100" alt="Element de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-2.png" height="100" alt="Element de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-3.png" height="100" alt="Element de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-4.png" height="100" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-1.png" height="200" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-2.png" height="200" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-3.png" height="200" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-4.png" height="200" alt="Element de l'interface du projet de SR03" />
 </p>
 
 -> La majorité du projet porte sur la sécurité de l'application ainsi que l'utilisation de WebSockets.
@@ -212,7 +212,7 @@ Cluster k3s haute disponibilité déployé sur 3 Ordinateurs NUC
 
 ### Langages de programmation
 
-<p align="left">
+<p style="display: flex; gap: 20px;">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="Python" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="40" alt="PHP" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="JavaScript" />
@@ -225,7 +225,7 @@ Cluster k3s haute disponibilité déployé sur 3 Ordinateurs NUC
 
 ### Frameworks & Bibliothèques Web
 
-<p align="left">
+<p style="display: flex; gap: 20px;">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="React / React Native" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" alt="Next.js" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" height="40" alt="Laravel" />
@@ -237,7 +237,8 @@ Cluster k3s haute disponibilité déployé sur 3 Ordinateurs NUC
 
 ### DevOps & Infrastructure
 
-<p align="left">
+<p style="display: flex; gap: 20px;">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" height="40" alt="Bash" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="Git" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="40" alt="Docker" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" height="40" alt="Kubernetes" />
@@ -245,31 +246,39 @@ Cluster k3s haute disponibilité déployé sur 3 Ordinateurs NUC
 <img src="https://cdn.prod.website-files.com/5f10ed4c0ebf7221fb5661a5/5f2ba11e378c8f49e8b28486_argo.png" height="40" alt="ArgoCD" />
 <img src="https://miro.medium.com/v2/resize:fit:1400/1*7qk0-4XwCKWQO0GU5Hu39w.png" height="40" alt="GitHub Actions" />
 <img src="https://forge.inrae.fr/uploads/-/system/project/avatar/6031/gitlab-ci.png" height="40" alt="GitLab CI" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="Linux" />
 </p>
 
 ### Observabilité
 
-<p align="left">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" height="40" alt="Grafana" />
+<p style="display: flex; gap: 20px;">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" height="40" alt="Prometheus" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" height="40" alt="Grafana" />
+<img src="https://grafana.com/media/docs/loki/logo-grafana-loki.png" height="40" alt="Loki" />
+<img src="https://grafana.com/media/docs/alloy/alloy_icon.png" height="40" alt="Alloy" />
+<img src="https://thanos.io/icon-dark.png" height="40" alt="Thanos" />
 </p>
-
-Thanos · Loki · Alloy
 
 ### Bases de données
 
-<p align="left">
+<p style="display: flex; gap: 20px;">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="40" alt="SQLite" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40" alt="MySQL" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="40" alt="PostgreSQL" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="MongoDB" />
 </p>
 
-SQLite · Prisma
-
 ### Cloud & Réseau
 
-Cloudflare / Cloudflared · Traefik · Nginx · Apache · Terraform · Longhorn
+<p style="display: flex; gap: 20px;">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" height="40" alt="Cloudflare" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/traefikproxy/traefikproxy-original.svg" height="40" alt="Traefik" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" height="40" alt="Nginx" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" height="40" alt="Apache" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" height="40" alt="Terraform" />
+<img src="https://raw.githubusercontent.com/cert-manager/cert-manager/ae6723401bd1bef1c00bd3c46a52c15387cd05ba/logo/logo.svg" height="40" alt="Cert-Manager" />
+</p>
+
+_Prochainement : Longhorn, ceph, Fluentd, kibana, tempo, victoria metrics_
 
 ---
 
