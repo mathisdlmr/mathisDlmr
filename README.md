@@ -8,6 +8,7 @@ Je code majoritairement pour apprendre, découvrir de nouvelles technos et syst�
 > Les projets présentés ici s'approchent majoritairement du développement web/full stack, car ce sont des projets qui sont plus simples à mettre en avant, mais aussi car c'est dans ce secteur que j'ai eu l'occasion de réaliser le plus de projets en cours ou dans les associations.
 >
 > Cependant, ma vraie passion réside dans les domaines suivants : Infra, Monitoring, Backend, SRE, DevOps
+>
 > Pour un exemple de projet plus concret dans ces domaines je t'invite à regarder mon homelab [mathisdlmr/k3s-project](https://github.com/mathisdlmr/k3s-project)
 
 ---
