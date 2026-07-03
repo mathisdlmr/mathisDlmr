@@ -99,8 +99,8 @@ Bar et foyer étudiant de l'UTC dans lequel j'ai travaillé à la maintenance de
 * **Bach** [picasso-utc/bach](https://github.com/picasso-utc/bach) : Borne de paiement en React installée sur des Raspberry Pi, avec badgeuse NFC pour les cartes étudiantes et intégration Weezpay
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/pic/ocktopus1.png" height="200" alt="Screenshot de l'interface admin du Pic" />
-<img src="./images/pic/ocktopus2.png" height="200" alt="Screenshot de l'interface admin du Pic" />
+<img src="./images/pic/ocktopus1.png" height="180" alt="Screenshot de l'interface admin du Pic" />
+<img src="./images/pic/ocktopus2.png" height="180" alt="Screenshot de l'interface admin du Pic" />
 </p>
 
 TODO : screenshot des bornes
@@ -150,10 +150,10 @@ TODO : ajouter des screens ici
 ### SR03
 
 <p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/sr03/sr03-1.png" height="200" alt="Element de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-2.png" height="200" alt="Element de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-3.png" height="200" alt="Element de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-4.png" height="200" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-1.png" height="180" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-2.png" height="180" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-3.png" height="180" alt="Element de l'interface du projet de SR03" />
+<img src="./images/sr03/sr03-4.png" height="180" alt="Element de l'interface du projet de SR03" />
 </p>
 
 -> La majorité du projet porte sur la sécurité de l'application ainsi que l'utilisation de WebSockets.
