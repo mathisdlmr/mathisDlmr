@@ -188,7 +188,7 @@ App mobile de gamification culturelle : carte de lieux culturels (via OpenStreet
 
 ---
 
-### Aide-un-étudiant *(Juillet 2025 - UTC x mc2i)* 🏆 1er prix
+### Aide-un-étudiant *(Juillet 2025 - UTC x mc2i)* - 🏆 1er prix
 
 Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de services, partage de connaissances. Pensée accessibilité et éco-conception (Server Components, requêtes Prisma optimisées, rendu statique, Score d'Impact Positif).
 
