@@ -13,6 +13,16 @@ Je code majoritairement pour apprendre, découvrir de nouvelles technos et syst�
 
 ---
 
+## Une petite intro ?
+
+A peine âgé de 10 ans, je passais déjà mon temps à jouer à minecraft, aller dans le fameux `%appdata%` pour custom mon jeu, installer des modpacks initialement pas du tout compatibles, commencer à toucher à Java et aux VMs pour essayer de comprendre comment fonctionnait le jouer et comment il tournait sur un PC.
+
+La suite logique était d'ensuite construire mon propre PC pour faire tourner un Minecraft boosté dessus, commencer à mettre Linux dessus parce que c'est cool, commencer à faire du développement, puis décider que j'allais faire ça toute ma vie.
+
+Au cours de mon parcours associatif et académique je me serai vraiment éclaté avec le développement web/mobile, mais j'avoue que je ne m'amuse plus autant dans ce milieu qu'avant. Depuis que j'ai découvert le **DevOps**, **l'Infra**, les **deisgn patterns** pour des backends scalables et résilients, et plus globalement tous les enjeux liés au **SRE**, j'ai l'impression d'avoir trouvé un terrain de jeu bien plus imposant et intéressant que le simple développement.
+
+---
+
 ## 💼 Expérience professionnelle
 
 ### Ingénieur SRE DevOps - [Padoa](https://www.padoa.fr) *(Stage)*
@@ -124,6 +134,18 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 
 ---
 
+### [Le Pic'Asso](https://github.com/picasso-utc) *(Automne 2026 ?)*
+
+Retour au Pic'Asso pour
+* Refaire de la documentation,
+* Remettre tous les projets à jours
+* Effectuer la migration des raspberry 3 vers 5 utilisés pour les bornes de vente et écran de diffusion
+* Développer de A à Z l'app mobile qui irait se brancher sur l'API du Backend : [mathisdlmr/app-pic](https://github.com/mathisdlmr/app-pic) : Application mobile du Pic'Asso, développée de A à Z
+
+TODO : screenshot de l'app
+
+---
+
 ## 📚 Projets de cours
 
 | Matière | Année | Projet | Description | Stack | Lien |
@@ -134,6 +156,13 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 | **TX, projets** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
 | **SR03, Architecture des app web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket| Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
 | **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) |
+
+TODO : IC05, NF18, IA02
+
++ SY02 ?
++ RO04 ?
++ IS05 ?
++ SC25/12/11/01, SI24 et Phiteco ?
 
 ---
 
