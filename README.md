@@ -124,6 +124,18 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 
 ---
 
+### [Le Pic'Asso](https://github.com/picasso-utc) *(Automne 2026 ?)*
+
+Retour au Pic'Asso pour
+* Refaire de la documentation,
+* Remettre tous les projets à jours
+* Effectuer la migration des raspberry 3 vers 5 utilisés pour les bornes de vente et écran de diffusion
+* Développer de A à Z l'app mobile qui irait se brancher sur l'API du Backend : [mathisdlmr/app-pic](https://github.com/mathisdlmr/app-pic) : Application mobile du Pic'Asso, développée de A à Z
+
+TODO : screenshot de l'app
+
+---
+
 ## 📚 Projets de cours
 
 > La grande majorité des repo embarquent Makefile et/ou Dockerfile. N'hésite pas à les essayer !
@@ -156,6 +168,9 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 
 ### IA02
 
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/ia02/ia02-3.gif" height="200" alt="Démo d'un MCTS" />
+</p>
 <p style="display: flex; gap: 20px; justify-content: center;">
   <img src="./images/ia02/ia02-1.png" height="200" alt="Element de gameplay IA02" />
   <img src="./images/ia02/ia02-2.png" height="200" alt="Element de gameplay IA02" />
