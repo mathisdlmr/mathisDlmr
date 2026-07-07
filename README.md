@@ -44,7 +44,7 @@ Au cours de mon parcours associatif et académique, je me suis vraiment éclaté
 
 ---
 
-## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/briefcase.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Expérience professionnelle
+## <img src="./miscellaneous/briefcase.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Expérience professionnelle
 
 ### Ingénieur SRE DevOps — [Padoa](https://www.padoa.fr) *(Stage : septembre 2025 à février 2026)*
 
@@ -57,7 +57,7 @@ Infra & DevOps dans une scale-up française de santé au travail.
 
 ---
 
-## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/server.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Projet phare — Homelab Kubernetes auto-hébergé (k3s-project)
+## <img src="./miscellaneous/server.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Projet phare — Homelab Kubernetes auto-hébergé (k3s-project)
 
 Un cluster **k3s** que j'administre de bout en bout depuis novembre 2025 : c'est le terrain de jeu où j'applique concrètement tout ce qui touche à l'infra, au réseau et au SRE, et où je fais tourner en prod plusieurs des projets associatifs présentés plus bas.
 
@@ -95,7 +95,7 @@ En temps normal, le serveur héberge aussi mes services persos (TodoList, Affine
 
 ---
 
-## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/users.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Vie associative à l'UTC
+## <img src="./miscellaneous/users.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Vie associative à l'UTC
 
 > [!TIP]
 > Les projets sont dans l'ordre chronologique, plus vous descendez mieux c'est ;)
@@ -192,7 +192,7 @@ Service Informatique de la Maison des Étudiants — hébergement et infra pour 
 
 ---
 
-## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/graduation-cap.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Projets de cours
+## <img src="./miscellaneous/graduation-cap.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Projets de cours
 
 > [!TIP]
 > La grande majorité des repos embarquent un Makefile et/ou un Dockerfile. N'hésite pas à les essayer !
@@ -273,7 +273,7 @@ _Au-delà des cours en informatique, j'ai suivi de nombreux autres cours dans le
 
 ---
 
-## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/laptop.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Hackathons
+## <img src="./miscellaneous/laptop.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Hackathons
 
 ### CultureXP *(Février 2025 — GottaGoHack, Epitech)*
 
@@ -297,7 +297,7 @@ Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de serv
 
 ---
 
-## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/gears.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Stack & Technos
+## <img src="./miscellaneous/gears.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Stack & Technos
 
 ### Langages de programmation
 
@@ -371,7 +371,7 @@ _Prochainement : Longhorn, Ceph, Fluentd, Kibana, Cilium, Mimir_
 
 ---
 
-## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Contact
+## <img src="./miscellaneous/envelope.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Contact
 
 - **Email** : [mathis.dlmr@gmail.com](mailto:mathis.dlmr@gmail.com)
 - **LinkedIn** : [linkedin.com/in/mathis-delmaere-6a6325325](https://www.linkedin.com/in/mathis-delmaere-6a6325325/)
