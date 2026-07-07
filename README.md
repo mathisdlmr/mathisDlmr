@@ -17,20 +17,20 @@ Je code majoritairement pour apprendre, découvrir de nouvelles technos et syst�
 >
 > Cependant, ma vraie passion réside dans les domaines suivants : **Infra, Monitoring, Backend, SRE, DevOps**.
 >
-> Le projet qui représente le mieux ça, c'est mon homelab **[k3s-project](#-projet-phare--homelab-kubernetes-auto-hébergé-k3s-project)**, détaillé plus bas dans ce README.
+> Le projet qui représente le mieux ça, c'est mon homelab **[k3s-project](#projet-phare--homelab-kubernetes-auto-hébergé-k3s-project)**, détaillé plus bas dans ce README.
 
 ---
 
 ## Sommaire
 
 - [Une petite intro ?](#une-petite-intro-)
-- [Expérience professionnelle](#-expérience-professionnelle)
-- [Projet phare — Homelab k3s](#-projet-phare--homelab-kubernetes-auto-hébergé-k3s-project)
-- [Vie associative à l'UTC](#-vie-associative-à-lutc)
-- [Projets de cours](#-projets-de-cours)
-- [Hackathons](#-hackathons)
-- [Stack & Technos](#️-stack--technos)
-- [Contact](#-contact)
+- [Expérience professionnelle](#expérience-professionnelle)
+- [Projet phare — Homelab k3s](#projet-phare--homelab-kubernetes-auto-hébergé-k3s-project)
+- [Vie associative à l'UTC](#vie-associative-à-lutc)
+- [Projets de cours](#projets-de-cours)
+- [Hackathons](#hackathons)
+- [Stack & Technos](#stack--technos)
+- [Contact](#contact)
 
 ---
 
@@ -44,9 +44,9 @@ Au cours de mon parcours associatif et académique, je me suis vraiment éclaté
 
 ---
 
-## Expérience professionnelle
+## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/briefcase.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Expérience professionnelle
 
-### Ingénieur SRE DevOps — [Padoa](https://www.padoa.fr) *(Stage — [dates à préciser])*
+### Ingénieur SRE DevOps — [Padoa](https://www.padoa.fr) *(Stage : septembre 2025 à février 2026)*
 
 Infra & DevOps dans une scale-up française de santé au travail.
 
@@ -57,41 +57,48 @@ Infra & DevOps dans une scale-up française de santé au travail.
 
 ---
 
-## Projet phare — Homelab Kubernetes auto-hébergé (k3s-project)
+## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/server.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Projet phare — Homelab Kubernetes auto-hébergé (k3s-project)
 
 Un cluster **k3s** que j'administre de bout en bout depuis novembre 2025 : c'est le terrain de jeu où j'applique concrètement tout ce qui touche à l'infra, au réseau et au SRE, et où je fais tourner en prod plusieurs des projets associatifs présentés plus bas.
 
 **Repo complet (GitOps, à cloner et explorer librement) : [mathisdlmr/k3s-project](https://github.com/mathisdlmr/k3s-project)**
 
-#### Architecture — HA géographique "maison"
+### Architecture — HA géographique
 
-Le cluster k3s HA tourne sur **3 mini-PC (NUC)** répartis sur **2 logements différents**, interconnectés via un mesh **Tailscale** (VPN) : Cilium fait passer son réseau **VXLAN** inter-pods à travers ce tunnel, et l'**etcd** assure le consensus distribué avec des snapshots automatiques toutes les 6h. 
+Le cluster k3s HA tourne sur **3 mini-PC (NUC)** répartis sur **2 logements différents**, interconnectés via un mesh **Tailscale** (VPN) : Cilium fait passer son réseau **VXLAN** inter-pods à travers ce tunnel, et l'**etcd** assure le consensus distribué avec des snapshots automatiques toutes les 6h.
 
 Depuis mon PC, un **HAProxy local** fait du round-robin sur les 3 control-planes pour un accès HA à l'API server : si un noeud tombe, `kubectl` continue de fonctionner sans interruption.
 
 ![Architecture du cluster k3s HA](./images/k3s/k3s-architecture.jpg)
 
-#### GitOps de bout en bout
+### GitOps de bout en bout
 
-Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : argpcd d'abord, puis l'infra, puis le monitoring, puis les apps), et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures). 
+Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : ArgoCD lui-même et ses CRDs d'abord, puis l'infra, puis le monitoring, puis les apps <!-- à confirmer : j'ai lu "argpcd" dans ta version, je pars du principe que c'était une coquille pour "ArgoCD" — dis-moi si l'ordre réel est différent -->), et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures).
 
 Un workflow GitHub Actions maison, **Argo Diff Preview**, génère le diff complet des manifests (Helm rendu + Kustomize) et le poste en commentaire de chaque PR — pratique pour visualiser l'impact avant de merger :)
 
-#### Observabilité complète
+### Observabilité complète
 
-Stack **Prometheus + Grafana + Loki + Alloy + Tempo** : les backends applicatifs (Ski'UT en tête) sont instrumentés en **OpenTelemetry** et envoient leurs traces directement dans Tempo. 
+Stack **Prometheus + Grafana + Loki + Alloy + Tempo** : les backends applicatifs (Ski'UT en tête) sont instrumentés en **OpenTelemetry** et envoient leurs traces directement dans Tempo.
 
 Logs, métriques et traces sont donc centralisés au même endroit, avec Grafana comme point d'entrée unique.
 
-#### Résultats concrets
+### Résultats concrets
 
-En janvier 2026, ce cluster a encaissé en prod les pics de charge du mini-jeu de réservation Ski'UT — **10 à 15k requêtes/seconde** — absorbés grâce à un cache Cloudflare configuré à la main, Traefik en DaemonSet devant le cluster, et un HPA sur les pods applicatifs. 
+En janvier 2026, ce cluster a encaissé en prod les pics de charge du mini-jeu de réservation Ski'UT — **en moyenne autour de 150 reqs/s, allant jusqu'à 200 reqs/s** — absorbés grâce à un cache Cloudflare configuré sur le storage (principalement des images, du CSS et JSS), Traefik en DaemonSet devant le cluster, et un load-balancing ajusté par un HPA pouvant monter de 1 à 3 containers Backend en cas de forte charge.
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+<img src="./images/k3s/shotgun-skiut.png" height="300" alt="Screenshot du shotgun de Skiut 2026" />
+</p>
 
 En temps normal, le serveur héberge aussi mes services persos (TodoList, Affine en Notion-like, Immich pour les photos, mon portfolio...).
 
 ---
 
-## Vie associative à l'UTC
+## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/users.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Vie associative à l'UTC
+
+> [!TIP]
+> Les projets sont dans l'ordre chronologique, plus vous descendez mieux c'est ;)
 
 ### Integ Fev *(Printemps 2023)*
 
@@ -131,7 +138,7 @@ Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'un
 <img src="./images/skiut2025/skiut6.png" height="200" alt="Screenshot de l'application de Skiut 2025" />
 </p>
 
-<a href="./files/skiut2025.pdf" download>Télécharger la présentation du projet</a>
+<a href="./files/skiut2025.pdf">Voir la présentation du projet</a>
 
 ---
 
@@ -153,11 +160,7 @@ Redéveloppement du projet, cette fois seul, pour le stabiliser et le rendre pé
 <img src="./images/skiut2026/skiut6.png" height="200" alt="Screenshot de l'application de Skiut 2026" />
 </p>
 
-Le projet a par la suite entièrement tourné sur mon cluster Kubernetes, et a tenu des pics de charge à plus de **10k requêtes/seconde** lors de certaines réservations à des évènements. Il a pour cela grandement profité d'une infrastructure réseau mature : Cloudflare → Tunnel Cloudflare → Traefik in-cluster → load balancing sur 2 containers Docker avec un HPA en cas de forte charge.
-
-<p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/skiut2026/shotgun.png" height="300" alt="Screenshot du shotgun de Skiut 2026" />
-</p>
+Le projet a par la suite entièrement tourné sur mon cluster Kubernetes.
 
 ---
 
@@ -189,27 +192,57 @@ Service Informatique de la Maison des Étudiants — hébergement et infra pour 
 
 ---
 
-## Projets de cours
+## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/graduation-cap.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Projets de cours
 
+> [!TIP]
 > La grande majorité des repos embarquent un Makefile et/ou un Dockerfile. N'hésite pas à les essayer !
 
 | Matière | Année | Projet | Description | Stack | Lien |
 |---|---|---|---|---|---|
-| **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) |
-| **SR03, Architecture des applications web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket | Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
-| **TX, projet** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
-| **IA02, Résolution de problèmes par algorithme** | Printemps 2025 | Résolution du morpion par algorithme | Implémentation d'un MCTS pour résoudre le jeu du morpion | `Python` | [mathisdlmr/ia02](https://github.com/mathisdlmr/ia02) |
-| **SR10, Introduction au développement web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn — gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
-| **SR04, Réseaux** | Automne 2024 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE` · `Zigbee` · `AMQP` · `MQTT` · `CoAP` | [voir plus bas ⤵](#sr04) |
-| **NF18, Conception de BDD (non-)relationnelles** | Printemps 2024 | Projet de BDD | BDD d'un aéroport en relationnel puis non-relationnel, implémentée dans PostgreSQL | `PostgreSQL` · `Python` | [mathisdlmr/nf18](https://github.com/mathisdlmr/nf18) |
-| **IC05, Analyse critique des données numériques** | Printemps 2024 | Scraper de Letterboxd | Scraper Letterboxd → PostgreSQL, puis nettoyage et analyse des données via Python | `Python` · `PostgreSQL` | [mathisdlmr/ic05](https://github.com/mathisdlmr/ic05) |
 | **API Init, Introduction à Linux** | Automne 2023 | Space Invaders | Jeu Space Invaders dans le terminal | `Bash` | [mathisdlmr/Space-Invaders](https://github.com/mathisdlmr/Space-Invaders) |
+| **IC05, Analyse critique des données numériques** | Printemps 2024 | Scraper de Letterboxd | Scraper Letterboxd → PostgreSQL, puis nettoyage et analyse des données via Python | `Python` · `PostgreSQL` | [mathisdlmr/ic05](https://github.com/mathisdlmr/ic05) |
+| **NF18, Conception de BDD (non-)relationnelles** | Printemps 2024 | Projet de BDD | BDD d'un aéroport en relationnel puis non-relationnel, implémentée dans PostgreSQL | `PostgreSQL` · `Python` | [mathisdlmr/nf18](https://github.com/mathisdlmr/nf18) |
+| **SR04, Réseaux** | Automne 2024 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE` · `Zigbee` · `AMQP` · `MQTT` · `CoAP` | [voir plus bas ⤵](#sr04) |
+| **SR10, Introduction au développement web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn — gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
+| **IA02, Résolution de problèmes par algorithme** | Printemps 2025 | Résolution du morpion par algorithme | Implémentation d'un MCTS pour résoudre le jeu du morpion | `Python` | [mathisdlmr/ia02](https://github.com/mathisdlmr/ia02) |
+| **TX, projet** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
+| **SR03, Architecture des applications web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket | Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
+| **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) |
 
 ---
 
-### SR05
+### IC05
 
-<a href="./files/sr05.pdf" download>Télécharger la présentation du projet</a>
+<a href="./files/ic05.pdf">Voir le rapport du projet</a>
+
+---
+
+### SR04
+
+<a href="./files/sr04-presentation.pdf">Voir la présentation du projet</a> | <a href="./files/sr04-rapport.pdf">Voir le rapport du projet</a>
+
+---
+
+### IA02
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/ia02/ia02-3.gif" height="200" alt="Démo d'un MCTS" />
+</p>
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/ia02/ia02-1.png" height="200" alt="Élément de gameplay IA02" />
+  <img src="./images/ia02/ia02-2.png" height="200" alt="Élément de gameplay IA02" />
+</p>
+
+---
+
+### TX
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/tutut/tutut1.png" height="200" alt="Élément de l'interface de Tut'ut" />
+  <img src="./images/tutut/tutut2.png" height="200" alt="Élément de l'interface de Tut'ut" />
+</p>
+
+**TODO : ajouter des screenshots supplémentaires ici**
 
 ---
 
@@ -226,40 +259,13 @@ Service Informatique de la Maison des Étudiants — hébergement et infra pour 
 
 ---
 
-### TX
+### SR05
 
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/tutut/tutut1.png" height="200" alt="Élément de l'interface de Tut'ut" />
-  <img src="./images/tutut/tutut2.png" height="200" alt="Élément de l'interface de Tut'ut" />
-</p>
-
-**TODO : ajouter des screenshots supplémentaires ici**
+<a href="./files/sr05.pdf">Voir la présentation du projet</a>
 
 ---
 
-### IA02
-
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/ia02/ia02-3.gif" height="200" alt="Démo d'un MCTS" />
-</p>
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/ia02/ia02-1.png" height="200" alt="Élément de gameplay IA02" />
-  <img src="./images/ia02/ia02-2.png" height="200" alt="Élément de gameplay IA02" />
-</p>
-
----
-
-### SR04
-
-<a href="./files/sr04-presentation.pdf" download>Télécharger la présentation du projet</a> | <a href="./files/sr04-rapport.pdf" download>Télécharger le rapport du projet</a>
-
----
-
-### IC05
-
-<a href="./files/ic05.pdf" download>Télécharger le rapport du projet</a>
-
----
+### Annexe : PHITECO
 
 _Au-delà des cours en informatique, j'ai suivi de nombreux autres cours dans le domaine des sciences cognitives ainsi que sur le lien entre technique et cognition. En parallèle de mon diplôme de génie informatique, je suis la mineure [PHITECO](https://sites.google.com/site/mineurphiteco/) (PHIlosophie, TEchnique et COgnition)._
 
@@ -267,7 +273,7 @@ _Au-delà des cours en informatique, j'ai suivi de nombreux autres cours dans le
 
 ---
 
-## Hackathons
+## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/laptop.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Hackathons
 
 ### CultureXP *(Février 2025 — GottaGoHack, Epitech)*
 
@@ -276,22 +282,22 @@ App mobile de gamification culturelle : carte de lieux culturels (via OpenStreet
 **Stack** : `Expo` · `React Native` · `TypeScript`
 → [mathisdlmr/CultureXP](https://github.com/mathisdlmr/CultureXP)
 
-<a href="./files/culturexp.pdf" download>Télécharger la présentation du projet</a>
+<a href="./files/culturexp.pdf">Voir la présentation du projet</a>
 
 ---
 
-### Aide-un-étudiant *(Juillet 2025 — UTC x mc2i)* — 1er prix
+### Aide-un-étudiant *(Juillet 2025 — UTC x mc2i)* — <img src="./miscellaneous/yellow-trophy.svg" width="16" height="16" style="vertical-align:-2px;" alt=""/> 1er prix
 
 Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de services, partage de connaissances. Pensée accessibilité et éco-conception (Server Components, requêtes Prisma optimisées, rendu statique, Score d'Impact Positif).
 
 **Stack** : `Next.js` · `TypeScript` · `Prisma` · `TailwindCSS` · `NextAuth.js`
 → [mathisdlmr/hackhaton-utc-mc2i](https://github.com/mathisdlmr/hackhaton-utc-mc2i)
 
-<a href="./files/aide-un-etu.pdf" download>Télécharger la présentation du projet</a>
+<a href="./files/aide-un-etu.pdf">Voir la présentation du projet</a>
 
 ---
 
-## Stack & Technos
+## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/gears.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Stack & Technos
 
 ### Langages de programmation
 
@@ -361,16 +367,16 @@ Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de serv
 <img src="https://raw.githubusercontent.com/cert-manager/cert-manager/ae6723401bd1bef1c00bd3c46a52c15387cd05ba/logo/logo.svg" height="40" alt="Cert-Manager" />
 </p>
 
-_Prochainement : Longhorn, Ceph, Fluentd, Kibana, Cilium, HAProxy, Renovate_
+_Prochainement : Longhorn, Ceph, Fluentd, Kibana, Cilium, Mimir_
 
 ---
 
-## Contact
+## <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/svgs/solid/envelope.svg" width="22" height="22" style="vertical-align:middle; filter: brightness(0) invert(1); margin-right: 6" alt=""/> Contact
 
 - **Email** : [mathis.dlmr@gmail.com](mailto:mathis.dlmr@gmail.com)
 - **LinkedIn** : [linkedin.com/in/mathis-delmaere-6a6325325](https://www.linkedin.com/in/mathis-delmaere-6a6325325/)
 - **GitHub** : [github.com/mathisdlmr](https://github.com/mathisdlmr)
-- **Localisation / mobilité** : A l'internationale ou en France en travaillant avec des acteurs internationaux
+- **Localisation / mobilité** : à l'international ou en France en travaillant avec des acteurs internationaux
 - **Langues** : Français (natif), Anglais (C1)
 
 ---
