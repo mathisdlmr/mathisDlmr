@@ -15,7 +15,7 @@ Je code majoritairement pour apprendre, découvrir de nouvelles technos et syst�
 
 # Une petite intro ?
 
-A peine âgé de 10 ans, je passais déjà mon temps à jouer à minecraft, aller dans le fameux `%appdata%` pour custom mon jeu, installer des modpacks initialement pas du tout compatibles, commencer à toucher à Java et aux VMs pour essayer de comprendre comment fonctionnait le jouer et comment il tournait sur un PC.
+A peine âgé de 10 ans, je passais déjà mon temps à jouer à minecraft, aller dans le fameux `%appdata%` pour custom mon jeu, installer des modpacks initialement pas du tout compatibles, commencer à toucher à Java et aux VMs pour essayer de comprendre comment fonctionnait le jeu, et comment il tournait sur un PC.
 
 La suite logique était d'ensuite construire mon propre PC pour faire tourner un Minecraft boosté dessus, commencer à mettre Linux dessus parce que c'est cool, commencer à faire du développement, puis décider que j'allais faire ça toute ma vie.
 
@@ -229,7 +229,7 @@ _Au delà des cours dans le domaine de l'informatique, j'ai suivi de nombreux au
 
 ### CultureXP *(Février 2025 - GottaGoHack, Epitech)*
 
-App mobile de gamification culturelle : carte de lieux culturels (via OpenStreetMap), quêtes, podcasts (via PodcastIndex), livres (via GoogleAPO), boutique d'achat avec l'XP. Un projet développé en 48h
+App mobile de gamification culturelle : carte de lieux culturels (via OpenStreetMap), quêtes, podcasts (via PodcastIndex), livres (via GoogleAPI), boutique d'achat avec l'XP. Un projet développé en 48h
 
 **Stack** : `Expo` · `React Native` · `TypeScript`
 -> [mathisdlmr/CultureXP](https://github.com/mathisdlmr/CultureXP)
