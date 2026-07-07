@@ -59,7 +59,7 @@ Infra & DevOps dans une scale-up française de santé au travail.
 
 * Tuteur soutient étudiant en mathématiques et informatique · UTC, Compiègne : Septembre 2023 → Juin 2025
 * Stagiaire opérateur sur ligne · Chanel, Compiègne: Février 2023 → Mars 2023
-* Réalisation de sites webs en Freelance · Padoa, Paris: Janvier 2023 → Mars 2023
+* Réalisation de sites webs en Freelance : Janvier 2023 → Mars 2023
 
 ---
 
@@ -106,13 +106,13 @@ En temps normal, le serveur héberge aussi mes services persos (TodoList, Affine
 > [!TIP]
 > Les projets sont dans l'ordre chronologique, plus vous descendez mieux c'est ;)
 
-### Integ Fev *(Printemps 2023)*
+### Integ Fev *(Printemps 2024)*
 
 Reprise, debug et mise à jour (nouvelles fonctionnalités, nouveau design) d'une app mobile **Flutter** et d'un backend **Laravel** pour une intégration de 1,5 semaine. L'application a été utilisée par une centaine d'étudiant.e.s et servait à proposer des animations et gérer l'organisation de la semaine d'intégration.
 
 ---
 
-### Integ *(Automne 2023)*
+### Integ *(Automne 2024)*
 
 Reprise, debug et mise à jour d'une app mobile **Expo** et d'un backend Laravel pour une intégration de 2 semaines. L'application a été utilisée par plus de 1000 étudiant.e.s et comptait encore plus de fonctionnalités que celle de l'Integ Fev : réservation de repas, file d'attente virtuelle, réservation de navette, scanner de QR code, etc.
 
@@ -129,7 +129,7 @@ _Ces screenshots sont issus de la version de l'application sur laquelle j'ai com
 
 ---
 
-### [Ski'UT](https://github.com/ski-utc) *(2024 → 2025)*
+### [Ski'UT](https://github.com/ski-utc) *(Mars 2024 → Fév. 2025)*
 
 Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'une application mobile **Expo** et d'un backend **Laravel** pour gérer l'organisation d'un voyage au ski pour ~500 étudiant.e.s et proposer des animations tout au long de la semaine.
 
@@ -148,7 +148,7 @@ Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'un
 
 ---
 
-### [Ski'UT V2](https://github.com/ski-utc) *(2025 → 2026)*
+### [Ski'UT V2](https://github.com/ski-utc) *(Mars 2025 → Fév. 2026)*
 
 Redéveloppement du projet, cette fois seul, pour le stabiliser et le rendre pérenne :
 
@@ -170,7 +170,7 @@ Le projet a par la suite entièrement tourné sur mon cluster Kubernetes.
 
 ---
 
-### [Le Pic'Asso](https://github.com/picasso-utc) *(Printemps 2025 → Automne 2026)*
+### [Le Pic'Asso](https://github.com/picasso-utc) *(Printemps 2025, Automne 2026)*
 
 Bar et foyer étudiant de l'UTC. J'y ai d'abord travaillé sur la maintenance des systèmes informatiques et le développement de nouvelles fonctionnalités pour les équipes de trésorerie et pour les animations (Printemps 2025), puis j'y reviens à partir de l'Automne 2026 pour reprendre et fiabiliser l'ensemble des projets :
 
@@ -195,6 +195,20 @@ Service Informatique de la Maison des Étudiants — hébergement et infra pour 
 - **UTCats** : webapp Filament pour la gestion des CATs — [mathisdlmr/UTCats](https://github.com/mathisdlmr/UTCats)
 - Debug et développement sur des projets d'infrastructure (majoritairement privés)
 - Participation à la migration **nginx/Apache → auto-hébergement k8s**, pour faire passer des applications historiquement en PHP vers du Node.js
+
+---
+
+### Président du Pic'Asso *(Février 2026 → Juillet 2026)*
+
+Élu à la présidence du Pic'Asso, le bar et foyer étudiant de l'UTC, pour un 6 mois à la tête d'une équipe de 25 personnes.
+
+- Interlocuteur direct avec la présidence du BDE, l'administration de l'école, le service hygiène et sécurité (SHS) et le service incendie
+- Pilotage de projets sur les locaux : réflexion, demandes de subvention, suivi des travaux
+- Réflexion et actions sur les enjeux RSE, le savoir-vivre ensemble, la non-discrimination et la lutte contre les VSS
+- Accompagnement individuel des membres de l'association pour s'assurer de leur bien-être et de la bonne marche du foyer
+- Organisation d'événements quasi hebdomadaires, chacun avec son propre dossier de sécurité
+- Supervision de la logistique (~1000L de bière, 125 sandwichs et 250 viennoiseries par semaine, 400 canettes de soft) et des relations fournisseurs associées
+- Entretien des locaux et des systèmes informatiques, soutien sur la communication de l'association, etc.
 
 ---
 
