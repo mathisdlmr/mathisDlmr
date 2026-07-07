@@ -46,7 +46,7 @@ Au cours de mon parcours associatif et académique, je me suis vraiment éclaté
 
 ## <img src="./miscellaneous/briefcase.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Expérience professionnelle
 
-### Ingénieur SRE DevOps — [Padoa](https://www.padoa.fr) *(Stage : septembre 2025 à février 2026)*
+### Ingénieur SRE DevOps — [Padoa](https://www.padoa.fr) *(Stage : Septembre 2025 → Février 2026)*
 
 Infra & DevOps dans une scale-up française de santé au travail.
 
@@ -54,6 +54,12 @@ Infra & DevOps dans une scale-up française de santé au travail.
 - **Monitoring** : mise en place et exploitation de dashboards Grafana, requêtes Prometheus, agrégation long-terme avec Thanos
 - **CI/CD** : écriture et maintenance de pipelines GitHub Actions
 - **Go** : développement d'outils internes de tooling infra
+
+### Et d'autres choses...
+
+* Tuteur soutient étudiant en mathématiques et informatique · UTC, Compiègne : Septembre 2023 → Juin 2025
+* Stagiaire opérateur sur ligne · Chanel, Compiègne: Février 2023 → Mars 2023
+* Réalisation de sites webs en Freelance · Padoa, Paris: Janvier 2023 → Mars 2023
 
 ---
 
