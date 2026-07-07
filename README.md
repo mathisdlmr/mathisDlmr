@@ -25,7 +25,7 @@ Je code majoritairement pour apprendre, découvrir de nouvelles technos et syst�
 
 - [Une petite intro ?](#une-petite-intro-)
 - [Expérience professionnelle](#expérience-professionnelle)
-- [Projet phare — Homelab k3s](#projet-phare--homelab-kubernetes-auto-hébergé-k3s-project)
+- [Projet phare - Homelab k3s](#projet-phare--homelab-kubernetes-auto-hébergé-k3s-project)
 - [Vie associative à l'UTC](#vie-associative-à-lutc)
 - [Projets de cours](#projets-de-cours)
 - [Hackathons](#hackathons)
@@ -46,7 +46,7 @@ Au cours de mon parcours associatif et académique, je me suis vraiment éclaté
 
 ## <img src="./miscellaneous/briefcase.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Expérience professionnelle
 
-### Ingénieur SRE DevOps — [Padoa](https://www.padoa.fr) *(Stage : Septembre 2025 → Février 2026)*
+### Ingénieur SRE DevOps - [Padoa](https://www.padoa.fr) *(Stage : Septembre 2025 → Février 2026)*
 
 Infra & DevOps dans une scale-up française de santé au travail.
 
@@ -63,13 +63,13 @@ Infra & DevOps dans une scale-up française de santé au travail.
 
 ---
 
-## <img src="./miscellaneous/server.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Projet phare — Homelab Kubernetes auto-hébergé (k3s-project)
+## <img src="./miscellaneous/server.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Projet phare - Homelab Kubernetes auto-hébergé (k3s-project)
 
 Un cluster **k3s** que j'administre de bout en bout depuis novembre 2025 : c'est le terrain de jeu où j'applique concrètement tout ce qui touche à l'infra, au réseau et au SRE, et où je fais tourner en prod plusieurs des projets associatifs présentés plus bas.
 
 **Repo complet (GitOps, à cloner et explorer librement) : [mathisdlmr/k3s-project](https://github.com/mathisdlmr/k3s-project)**
 
-### Architecture — HA géographique
+### Architecture - HA géographique
 
 Le cluster k3s HA tourne sur **3 mini-PC (NUC)** répartis sur **2 logements différents**, interconnectés via un mesh **Tailscale** (VPN) : Cilium fait passer son réseau **VXLAN** inter-pods à travers ce tunnel, et l'**etcd** assure le consensus distribué avec des snapshots automatiques toutes les 6h.
 
@@ -79,19 +79,21 @@ Depuis mon PC, un **HAProxy local** fait du round-robin sur les 3 control-planes
 
 ### GitOps de bout en bout
 
-Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : ArgoCD lui-même et ses CRDs d'abord, puis l'infra, puis le monitoring, puis les apps <!-- à confirmer : j'ai lu "argpcd" dans ta version, je pars du principe que c'était une coquille pour "ArgoCD" — dis-moi si l'ordre réel est différent -->), et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures).
+Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : ArgoCD lui-même et ses CRDs d'abord, puis l'infra, puis le monitoring, puis les apps <!-- à confirmer : j'ai lu "argpcd" dans ta version, je pars du principe que c'était une coquille pour "ArgoCD" - dis-moi si l'ordre réel est différent -->), et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures).
 
-Un workflow GitHub Actions maison, **Argo Diff Preview**, génère le diff complet des manifests (Helm rendu + Kustomize) et le poste en commentaire de chaque PR — pratique pour visualiser l'impact avant de merger :)
+Un workflow GitHub Actions, **Argo Diff Preview**, génère le diff complet des manifests (Helm rendu + Kustomize) et le poste en commentaire de chaque PR. Pratique pour visualiser l'impact avant de merger :)
 
 ### Observabilité complète
 
 Stack **Prometheus + Grafana + Loki + Alloy + Tempo** : les backends applicatifs (Ski'UT en tête) sont instrumentés en **OpenTelemetry** et envoient leurs traces directement dans Tempo.
 
-Logs, métriques et traces sont donc centralisés au même endroit, avec Grafana comme point d'entrée unique.
+Logs, métriques et traces sont donc centralisés sur la stack de Grafana Labs, avec Grafana comme point d'entrée unique.
+
+Par curiosité j'ai également prévu de tester les techno suivantes dans les prochains mois : Mimir, Victoria Metrics, Fluentd, Elasticsearch, Kibana, Datadog
 
 ### Résultats concrets
 
-En janvier 2026, ce cluster a encaissé en prod les pics de charge du mini-jeu de réservation Ski'UT — **en moyenne autour de 150 reqs/s, allant jusqu'à 200 reqs/s** — absorbés grâce à un cache Cloudflare configuré sur le storage (principalement des images, du CSS et JSS), Traefik en DaemonSet devant le cluster, et un load-balancing ajusté par un HPA pouvant monter de 1 à 3 containers Backend en cas de forte charge.
+En janvier 2026, ce cluster a encaissé en prod les pics de charge du mini-jeu de réservation Ski'UT - **en moyenne autour de 150 reqs/s, allant jusqu'à 200 reqs/s** - absorbés grâce à un cache Cloudflare configuré sur le storage (principalement des images, du CSS et JSS), Traefik en DaemonSet devant le cluster, et un load-balancing ajusté par un HPA pouvant monter de 1 à 3 containers Backend en cas de forte charge.
 
 <p style="display: flex; gap: 20px; justify-content: center;">
 <img src="./images/k3s/shotgun-skiut.png" height="300" alt="Screenshot du shotgun de Skiut 2026" />
@@ -133,8 +135,8 @@ _Ces screenshots sont issus de la version de l'application sur laquelle j'ai com
 
 Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'une application mobile **Expo** et d'un backend **Laravel** pour gérer l'organisation d'un voyage au ski pour ~500 étudiant.e.s et proposer des animations tout au long de la semaine.
 
-- **Backend** : [ski-utc/server-skiut-2026](https://github.com/ski-utc/server-skiut-2026) — serveur Laravel/Filament pour toute l'organisation du voyage (réservations, planning, navettes…)
-- **App mobile** : [ski-utc/app-skiut-2026](https://github.com/ski-utc/app-skiut-2026) — app Expo avec défis, planning, anecdotes, plan du domaine, navettes, notifications push, export/anonymisation RGPD, etc.
+- **Backend** : [ski-utc/server-skiut-2026](https://github.com/ski-utc/server-skiut-2026) - serveur Laravel/Filament pour toute l'organisation du voyage (réservations, planning, navettes…)
+- **App mobile** : [ski-utc/app-skiut-2026](https://github.com/ski-utc/app-skiut-2026) - app Expo avec défis, planning, anecdotes, plan du domaine, navettes, notifications push, export/anonymisation RGPD, etc.
 
 <p style="display: flex; gap: 20px; justify-content: center;">
 <img src="./images/skiut2025/skiut2.png" height="200" alt="Screenshot de l'application de Skiut 2025" />
@@ -174,8 +176,8 @@ Le projet a par la suite entièrement tourné sur mon cluster Kubernetes.
 
 Bar et foyer étudiant de l'UTC. J'y ai d'abord travaillé sur la maintenance des systèmes informatiques et le développement de nouvelles fonctionnalités pour les équipes de trésorerie et pour les animations (Printemps 2025), puis j'y reviens à partir de l'Automne 2026 pour reprendre et fiabiliser l'ensemble des projets :
 
-- **Ocktopus** — [picasso-utc/ocktopus](https://github.com/picasso-utc/ocktopus) : backend Laravel/Filament pour l'organisation de l'association et les services de trésorerie + API pour l'app mobile
-- **Bach** — [picasso-utc/bach](https://github.com/picasso-utc/bach) : borne de paiement en React installée sur des Raspberry Pi, avec badgeuse NFC pour les cartes étudiantes et intégration Weezpay
+- **Ocktopus** - [picasso-utc/ocktopus](https://github.com/picasso-utc/ocktopus) : backend Laravel/Filament pour l'organisation de l'association et les services de trésorerie + API pour l'app mobile
+- **Bach** - [picasso-utc/bach](https://github.com/picasso-utc/bach) : borne de paiement en React installée sur des Raspberry Pi, avec badgeuse NFC pour les cartes étudiantes et intégration Weezpay
 - **[app-pic](https://github.com/mathisdlmr/app-pic)** : application mobile du Pic'Asso, développée de A à Z, branchée sur l'API du backend existant
 - Reprise de la documentation, mise à jour des projets, migration des Raspberry Pi 3 vers des Raspberry Pi 5 pour les bornes de vente et l'écran de diffusion
 
@@ -190,9 +192,9 @@ Bar et foyer étudiant de l'UTC. J'y ai d'abord travaillé sur la maintenance de
 
 ### [SiMDE](https://assos.utc.fr/simde/) *(Printemps 2025, Printemps 2026)*
 
-Service Informatique de la Maison des Étudiants — hébergement et infra pour les >100 associations de la fédération BDE-UTC.
+Service Informatique de la Maison des Étudiants - hébergement et infra pour les >100 associations de la fédération BDE-UTC.
 
-- **UTCats** : webapp Filament pour la gestion des CATs — [mathisdlmr/UTCats](https://github.com/mathisdlmr/UTCats)
+- **UTCats** : webapp Filament pour la gestion des CATs - [mathisdlmr/UTCats](https://github.com/mathisdlmr/UTCats)
 - Debug et développement sur des projets d'infrastructure (majoritairement privés)
 - Participation à la migration **nginx/Apache → auto-hébergement k8s**, pour faire passer des applications historiquement en PHP vers du Node.js
 
@@ -223,7 +225,7 @@ Service Informatique de la Maison des Étudiants — hébergement et infra pour 
 | **IC05, Analyse critique des données numériques** | Printemps 2024 | Scraper de Letterboxd | Scraper Letterboxd → PostgreSQL, puis nettoyage et analyse des données via Python | `Python` · `PostgreSQL` | [mathisdlmr/ic05](https://github.com/mathisdlmr/ic05) |
 | **NF18, Conception de BDD (non-)relationnelles** | Printemps 2024 | Projet de BDD | BDD d'un aéroport en relationnel puis non-relationnel, implémentée dans PostgreSQL | `PostgreSQL` · `Python` | [mathisdlmr/nf18](https://github.com/mathisdlmr/nf18) |
 | **SR04, Réseaux** | Automne 2024 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE` · `Zigbee` · `AMQP` · `MQTT` · `CoAP` | [voir plus bas ⤵](#sr04) |
-| **SR10, Introduction au développement web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn — gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
+| **SR10, Introduction au développement web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
 | **IA02, Résolution de problèmes par algorithme** | Printemps 2025 | Résolution du morpion par algorithme | Implémentation d'un MCTS pour résoudre le jeu du morpion | `Python` | [mathisdlmr/ia02](https://github.com/mathisdlmr/ia02) |
 | **TX, projet** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
 | **SR03, Architecture des applications web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket | Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
@@ -295,7 +297,7 @@ _Au-delà des cours en informatique, j'ai suivi de nombreux autres cours dans le
 
 ## <img src="./miscellaneous/laptop.svg" width="22" height="22" style="vertical-align:middle; margin-right: 6" alt=""/> Hackathons
 
-### CultureXP *(Février 2025 — GottaGoHack, Epitech)*
+### CultureXP *(Février 2025 - GottaGoHack, Epitech)*
 
 App mobile de gamification culturelle : carte de lieux culturels (via OpenStreetMap), quêtes, podcasts (via PodcastIndex), livres (via Google Books API), boutique d'achat avec l'XP gagnée. Un projet développé en 48h.
 
@@ -306,7 +308,7 @@ App mobile de gamification culturelle : carte de lieux culturels (via OpenStreet
 
 ---
 
-### Aide-un-étudiant *(Juillet 2025 — UTC x mc2i)* — <img src="./miscellaneous/yellow-trophy.svg" width="16" height="16" style="vertical-align:-2px;" alt=""/> 1er prix
+### Aide-un-étudiant *(Juillet 2025 - UTC x mc2i)* - <img src="./miscellaneous/yellow-trophy.svg" width="16" height="16" style="vertical-align:-2px;" alt=""/> 1er prix
 
 Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de services, partage de connaissances. Pensée accessibilité et éco-conception (Server Components, requêtes Prisma optimisées, rendu statique, Score d'Impact Positif).
 
