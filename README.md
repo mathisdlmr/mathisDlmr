@@ -152,57 +152,21 @@ TODO : screenshot de l'app
 
 | Matière | Année | Projet | Description | Stack | Lien |
 |---|---|---|---|---|---|
-| **API Init, Introduction à Linux** | Automne 2023 | Space Invaders | Jeu Space Invaders dans le terminal | `Bash` | [mathisdlmr/Space-Invaders](https://github.com/mathisdlmr/Space-Invaders) |
-| **IC05, Analyse critique des données numériques** | Printemps 2024 | Scrapper de Letterboxd | Scrapper Letterboxd -> PostgreSQL puis nettoyage et analyse des données via Python | `Python` · `PostgreSQL` | [mathisdlmr/ic05](https://github.com/mathisdlmr/ic05) |
-| **NF18, Conception de BDD (non-)relationnelles** | Printemps 2024 | Projet de BDD | BDD d'un aéroport en relationnel puis non-relationnel implémentée dans PostgreSQL | `PostgreSQL` · `Python` | [mathisdlmr/nf18](https://github.com/mathisdlmr/nf18) |
-| **SR04, Réseaux** | Automne 2024 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE` · `Zigbee` · `AMQP` · `MQTT` · `CoAP` | ... |
-| **SR10, Introduction au dev web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
-| **IA02, Résolution de Problèmes par algo** | Printemps 2025 | Résolution du Morpion par Algo | Implémentation d'un MCTS pour résoudre le problème du jeu du morpion | `Python` | [mathisdlmr/ia02](https://github.com/mathisdlmr/ia02) |
-| **TX, projets** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
-| **SR03, Architecture des app web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket| Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
 | **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) |
-
-TODO : IC05, NF18, IA02
-
-+ SY02 ?
-+ RO04 ?
-+ IS05 ?
-+ SC25/12/11/01, SI24 et Phiteco ?
-
----
-
-### IC05
-
-<a href="./files/ic05.pdf" download>Télécharger le rapport du projet</a>
+| **SR03, Architecture des app web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket| Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
+| **TX, projets** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
+| **IA02, Résolution de Problèmes par algo** | Printemps 2025 | Résolution du Morpion par Algo | Implémentation d'un MCTS pour résoudre le problème du jeu du morpion | `Python` | [mathisdlmr/ia02](https://github.com/mathisdlmr/ia02) |
+| **SR10, Introduction au dev web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
+| **SR04, Réseaux** | Automne 2024 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE` · `Zigbee` · `AMQP` · `MQTT` · `CoAP` | ... |
+| **NF18, Conception de BDD (non-)relationnelles** | Printemps 2024 | Projet de BDD | BDD d'un aéroport en relationnel puis non-relationnel implémentée dans PostgreSQL | `PostgreSQL` · `Python` | [mathisdlmr/nf18](https://github.com/mathisdlmr/nf18) |
+| **IC05, Analyse critique des données numériques** | Printemps 2024 | Scrapper de Letterboxd | Scrapper Letterboxd -> PostgreSQL puis nettoyage et analyse des données via Python | `Python` · `PostgreSQL` | [mathisdlmr/ic05](https://github.com/mathisdlmr/ic05) |
+| **API Init, Introduction à Linux** | Automne 2023 | Space Invaders | Jeu Space Invaders dans le terminal | `Bash` | [mathisdlmr/Space-Invaders](https://github.com/mathisdlmr/Space-Invaders) |
 
 ---
 
-### SR04
+### SR05
 
-<a href="./files/sr04-presentation.pdf" download>Télécharger la présentation du projet</a> | <a href="./files/sr04-rapport.pdf" download>Télécharger le rapport du projet</a>
-
----
-
-### IA02
-
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/ia02/ia02-3.gif" height="200" alt="Démo d'un MCTS" />
-</p>
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/ia02/ia02-1.png" height="200" alt="Element de gameplay IA02" />
-  <img src="./images/ia02/ia02-2.png" height="200" alt="Element de gameplay IA02" />
-</p>
-
----
-
-### TX
-
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/tutut/tutut1.png" height="200" alt="Element de l'interface de Tut'ut" />
-  <img src="./images/tutut/tutut2.png" height="200" alt="Element de l'interface de Tut'ut" />
-</p>
-
-TODO : ajouter des screens ici
+<a href="./files/sr05.pdf" download>Télécharger la présentation du projet</a>
 
 ---
 
@@ -219,11 +183,41 @@ TODO : ajouter des screens ici
 
 ---
 
-### SR05
+### TX
 
-<a href="./files/sr05.pdf" download>Télécharger la présentation du projet</a>
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/tutut/tutut1.png" height="200" alt="Element de l'interface de Tut'ut" />
+  <img src="./images/tutut/tutut2.png" height="200" alt="Element de l'interface de Tut'ut" />
+</p>
+
+TODO : ajouter des screens ici
 
 ---
+
+### IA02
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/ia02/ia02-3.gif" height="200" alt="Démo d'un MCTS" />
+</p>
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/ia02/ia02-1.png" height="200" alt="Element de gameplay IA02" />
+  <img src="./images/ia02/ia02-2.png" height="200" alt="Element de gameplay IA02" />
+</p>
+
+---
+
+### SR04
+
+<a href="./files/sr04-presentation.pdf" download>Télécharger la présentation du projet</a> | <a href="./files/sr04-rapport.pdf" download>Télécharger le rapport du projet</a>
+
+---
+
+### IC05
+
+<a href="./files/ic05.pdf" download>Télécharger le rapport du projet</a>
+
+---
+
 
 _Au delà des cours dans le domaine de l'informatique, j'ai suivi de nombreux autres cours dans le domain des sciences cognitives ainsi que du lien entre technique et cognition. J'ai alors, en parallèle de mon diplôme de génie informatique, la mineure [PHITECO](https://sites.google.com/site/mineurphiteco/) (PHIlosophie, TEchnique et COgnition)._
 
