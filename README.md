@@ -1,6 +1,6 @@
 # Heyyyy, moi c'est Mathis Delmaere 👋
 
-**<span style="color:#00FF00; font-size: 1.5rem">●</span> Disponible pour un stage de fin d'études à partir de février 2027**
+**<img src="./miscellaneous/green-dot.gif" width="20" height="20" style="vertical-align:middle;"/> Disponible pour un stage de fin d'études à partir de février 2027**
 > [!TIP]
 > **Domaines recherchés**
 > - Infrastructure
