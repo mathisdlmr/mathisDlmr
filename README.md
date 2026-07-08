@@ -67,11 +67,13 @@ Infra & DevOps dans une scale-up française de santé au travail.
 
 Un cluster **k3s** que j'administre de bout en bout depuis novembre 2025 : c'est le terrain de jeu où j'applique concrètement tout ce qui touche à l'infra, au réseau et au SRE, et où je fais tourner en prod plusieurs des projets associatifs présentés plus bas.
 
+![Photo du Cluster](./images/k3s/cluster.jpg)
+
 **Repo complet (GitOps, à cloner et explorer librement) : [mathisdlmr/k3s-project](https://github.com/mathisdlmr/k3s-project)**
 
 ### Architecture - HA géographique
 
-Le cluster k3s HA tourne sur **3 mini-PC (NUC)** répartis sur **2 logements différents**, interconnectés via un mesh **Tailscale** (VPN) : Cilium fait passer son réseau **VXLAN** inter-pods à travers ce tunnel, et l'**etcd** assure le consensus distribué avec des snapshots automatiques toutes les 6h.
+Le cluster k3s HA tourne sur **3 mini-PC (NUC)** répartis sur **2 logements différents**, interconnectés via un mesh **Tailscale** (VPN) : Cilium fait passer son réseau **VXLAN** inter-pods à travers ce tunnel, et l'**etcd** assure le consensus distribué avec des snapshots automatiques toutes les 6h. _Initialement les 3 NUCs étaient chez mes parents, d'où la photo ci-dessus, mais j'en ai ensuite embarqué 2 dans mon logement à Compiègne_
 
 Depuis mon PC, un **HAProxy local** fait du round-robin sur les 3 control-planes pour un accès HA à l'API server : si un noeud tombe, `kubectl` continue de fonctionner sans interruption.
 
@@ -82,6 +84,11 @@ Depuis mon PC, un **HAProxy local** fait du round-robin sur les 3 control-planes
 Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : ArgoCD lui-même et ses CRDs d'abord, puis l'infra, puis le monitoring, puis les apps <!-- à confirmer : j'ai lu "argpcd" dans ta version, je pars du principe que c'était une coquille pour "ArgoCD" - dis-moi si l'ordre réel est différent -->), et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures).
 
 Un workflow GitHub Actions, **Argo Diff Preview**, génère le diff complet des manifests (Helm rendu + Kustomize) et le poste en commentaire de chaque PR. Pratique pour visualiser l'impact avant de merger :)
+
+<p style="display: flex; gap: 20px; justify-content: center;">
+  <img src="./images/k3s/pr-1.png" height="300" alt="Renovate + ArgoDiff Preview" />
+  <img src="./images/k3s/pr-2.png" height="300" alt="Renovate + ArgoDiff Preview" />
+</p>
 
 ### Observabilité complète
 
@@ -95,9 +102,7 @@ Par curiosité j'ai également prévu de tester les techno suivantes dans les pr
 
 En janvier 2026, ce cluster a encaissé en prod les pics de charge du mini-jeu de réservation Ski'UT - **en moyenne autour de 150 reqs/s, allant jusqu'à 200 reqs/s** - absorbés grâce à un cache Cloudflare configuré sur le storage (principalement des images, du CSS et JSS), Traefik en DaemonSet devant le cluster, et un load-balancing ajusté par un HPA pouvant monter de 1 à 3 containers Backend en cas de forte charge.
 
-<p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/k3s/shotgun-skiut.png" height="300" alt="Screenshot du shotgun de Skiut 2026" />
-</p>
+![Réservation des places Ski'UT 2026](./images/k3s/shotgun-skiut.png)
 
 En temps normal, le serveur héberge aussi mes services persos (TodoList, Affine en Notion-like, Immich pour les photos, mon portfolio...).
 
