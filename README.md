@@ -73,15 +73,41 @@ Un cluster **k3s** que j'administre de bout en bout depuis novembre 2025 : c'est
 
 ### Architecture - HA géographique
 
-Le cluster k3s HA tourne sur **3 mini-PC (NUC)** répartis sur **2 logements différents**, interconnectés via un mesh **Tailscale** (VPN) : Cilium fait passer son réseau **VXLAN** inter-pods à travers ce tunnel, et l'**etcd** assure le consensus distribué avec des snapshots automatiques toutes les 6h. _Initialement les 3 NUCs étaient chez mes parents, d'où la photo ci-dessus, mais j'en ai ensuite embarqué 2 dans mon logement à Compiègne_
+Le cluster k3s HA tourne sur **3 mini-PC (NUC)** répartis sur **2 logements différents**, interconnectés via un mesh **Tailscale** (VPN) : Cilium fait passer son réseau **VXLAN** inter-pods à travers ce tunnel, et l'**etcd** assure le consensus distribué avec des snapshots automatiques toutes les 6h. Bien évidemment, Longhorn a également été setup de sorte à repliquer les volumes sur chaque nodes afin de toujours pouvoir accéder au stockage, même si un node tombe.
 
-Depuis mon PC, un **HAProxy local** fait du round-robin sur les 3 control-planes pour un accès HA à l'API server : si un noeud tombe, `kubectl` continue de fonctionner sans interruption.
+PS : _Initialement les 3 NUCs étaient chez mes parents, d'où la photo ci-dessus, mais j'en ai ensuite embarqué 2 dans mon logement à Compiègne_
 
-![Architecture du cluster k3s HA](./images/k3s/k3s-architecture.jpg)
+Depuis mon PC, un **HAProxy local** fait du round-robin sur les 3 control-planes pour un accès HA à l'API server : si un noeud tombe, `kubectl`, ArgoCD et tout mes autres services continuent de fonctionner sans interruption.
 
-### GitOps de bout en bout
+### Setup - Approche DevOps
 
-Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : ArgoCD lui-même et ses CRDs d'abord, puis l'infra, puis le monitoring, puis les apps <!-- à confirmer : j'ai lu "argpcd" dans ta version, je pars du principe que c'était une coquille pour "ArgoCD" - dis-moi si l'ordre réel est différent -->), et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures).
+Pour le cluster, j'ai opté pour une approche DevOps, entièrement reproductible en quelques minutes.
+
+Le cluster est dans un premier temps créé par Ansible, qui tourne sur mon ordinateur portable, et setup chacun des NUCs pour les préparer à être une node (sécurisée)
+
+![Configuration des nodes](./images/k3s/setup/1-node-configuration.png)
+
+Une fois l'installation terminée, on obtient cette architecture : 
+
+![Architecture après la configuration des nodes](./images/k3s/setup/1-nodes-configured.png)
+
+Pour continuer le setup, on va installer une application ArgoCD qui va pouvoir reprendre la main sur le ArgoCD installé par Ansible, et se charger de déployer tout le reste du repo par l'intermédiaire de l'application `meta`
+
+![ArgoCD Setup](./images/k3s/setup/2-argocd-setup.png)
+
+Finalement, il ne nous reste plus qu'à récupérer tous les secrets. Pour ça on créé alors un secret kubernetes `infisical-universal-auth-credentials` qui permet à External Secrets Operator de s'identifier auprès de Infisical, pour ensuite pouvoir recréer tous les secrets du repo (login, tunnel cloudflare, ...)
+
+![Re-création des secrets](./images/k3s/setup/3-recreate-secrets.png)
+
+Et voilà le cluster est remonté de A à Z ! 
+
+Les services sont alors accessibles en ligne depuis le nom de domaine `https://mdlmr.fr/*`. Et pour avoir un peu plus de visibilité sur comment ça se passe à ce niveau, voilà un dernier schéma ;)
+
+![Flow d'une requête](./images/k3s/setup/4-request-flow.png)
+
+### Maintenant - CI/CD et GitOps
+
+Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : ArgoCD lui-même et ses CRDs d'abord, puis l'infra, puis le monitoring, puis les apps, et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures).
 
 Un workflow GitHub Actions, **Argo Diff Preview**, génère le diff complet des manifests (Helm rendu + Kustomize) et le poste en commentaire de chaque PR. Pratique pour visualiser l'impact avant de merger :)
 
@@ -394,7 +420,7 @@ Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de serv
 <img src="https://raw.githubusercontent.com/cert-manager/cert-manager/ae6723401bd1bef1c00bd3c46a52c15387cd05ba/logo/logo.svg" height="40" alt="Cert-Manager" />
 </p>
 
-_Prochainement : Longhorn, Ceph, Fluentd, Kibana, Cilium, Mimir_
+_Prochainement : Longhorn, Ceph, Fluentd, Kibana, Cilium, Mimir, Kong Gateway_
 
 ---
 
