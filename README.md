@@ -107,7 +107,7 @@ Les services sont alors accessibles en ligne depuis le nom de domaine `https://m
 
 ![Flow d'une requête](./images/k3s/setup/4-request-flow.png)
 
-### Maintenant - CI/CD et GitOps
+### Maintenance - CI/CD et GitOps
 
 Le cluster est piloté par **ArgoCD** selon un pattern *app-of-apps* multi-niveaux (avec des sync-waves pour garantir l'ordre de déploiement : ArgoCD lui-même et ses CRDs d'abord, puis l'infra, puis le monitoring, puis les apps, et par **Renovate** qui ouvre automatiquement les PRs de mise à jour des charts Helm et des images Docker (auto-merge sur les mises à jour mineures, revue manuelle sur les majeures).
 
