@@ -120,11 +120,13 @@ Un workflow GitHub Actions, **Argo Diff Preview**, génère le diff complet des 
 
 ### Observabilité complète
 
-Stack **Prometheus + Grafana + Loki + Alloy + Tempo** : les backends applicatifs (Ski'UT en tête) sont instrumentés en **OpenTelemetry** et envoient leurs traces directement dans Tempo.
+L'observabilité est assurée par 2 stacks complètes : 
+* La Stack de Prometheus et Grafana Labs (Prometheus, Grafana, Alloy, Loki, Tempo) ainsi que 
+* La stack EFK (Elasticsearch, Fluent, Kibana) - Victoria Metrics - OTel
 
-Logs, métriques et traces sont donc centralisés sur la stack de Grafana Labs, avec Grafana comme point d'entrée unique.
+Ce deux stacks de monitoring récupèrent les logs et metrics que la totalité des services déployés, et le système de trace n'est à ce jour utilisé que pour le backend de Ski'UT dans lequel j'ai implémenté le SDK de OTel pour récupérer des traces et pouvoir inspecter les requêtes particulièrement lentes (le bottleneck était généralement le pooling de connexion à la Base de Données ou des opérations avec l'ORM Eloquent mal factorisées).
 
-Par curiosité j'ai également prévu de tester les techno suivantes dans les prochains mois : Mimir, Victoria Metrics, Fluentd, Elasticsearch, Kibana, Datadog
+L'intérêt de posséder 2 stacks de monitoring est simplement à des fins de formation, afin que je sache utiliser la stack de Grafana Labs tout comme d'autres outils fortement utilisés (Elasticsearch, Fluent, ...). En ce sens, je pense prochainement également ajouter à ma stack Mimir et/ou Thanos IO, ainsi que Datadog.
 
 ### Résultats concrets
 
@@ -132,7 +134,7 @@ En janvier 2026, ce cluster a encaissé en prod les pics de charge du mini-jeu d
 
 ![Réservation des places Ski'UT 2026](./images/k3s/shotgun-skiut.png)
 
-En temps normal, le serveur héberge aussi mes services persos (TodoList, Affine en Notion-like, Immich pour les photos, mon portfolio...).
+En temps normal, le serveur héberge aussi mes services persos (Affine en Notion-like, Immich pour les photos, mon site web...).
 
 ---
 
@@ -160,7 +162,7 @@ Reprise, debug et mise à jour d'une app mobile **Expo** et d'un backend Laravel
 <img src="./images/integ/integ6.jpg" height="200" alt="Screenshot de l'application de l'Intégration" />
 </p>
 
-_Ces screenshots sont issus de la version de l'application sur laquelle j'ai commencé à travailler ; le développement initial avait été effectué par Géo SAGLIO l'année précédant mon arrivée dans l'association._
+_Ces screenshots sont issus de la version de l'application sur laquelle j'ai commencé à travailler, ai corrigé des bugs et ajouté des features. Le développement initial avait été effectué par Géo SAGLIO l'année précédant mon arrivée dans l'association. Je n'ai malheureusement pas réussi à remettre la main sur les anciennes versions du projet, le repository étant privé et n'ayant pas de copie en local..._
 
 ---
 
@@ -168,7 +170,7 @@ _Ces screenshots sont issus de la version de l'application sur laquelle j'ai com
 
 Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'une application mobile **Expo** et d'un backend **Laravel** pour gérer l'organisation d'un voyage au ski pour ~500 étudiant.e.s et proposer des animations tout au long de la semaine.
 
-- **Backend** : [ski-utc/server-skiut-2026](https://github.com/ski-utc/server-skiut-2026) - serveur Laravel/Filament pour toute l'organisation du voyage (réservations, planning, navettes…)
+- **Backend** : [ski-utc/server-skiut-2026](https://github.com/ski-utc/server-skiut-2026) - serveur Laravel/Filament pour toute l'organisation du voyage (Auth via l'OAuth 2.0 du Service Informatique du BDE, réservations, planning, navettes…)
 - **App mobile** : [ski-utc/app-skiut-2026](https://github.com/ski-utc/app-skiut-2026) - app Expo avec défis, planning, anecdotes, plan du domaine, navettes, notifications push, export/anonymisation RGPD, etc.
 
 <p style="display: flex; gap: 20px; justify-content: center;">
@@ -185,7 +187,7 @@ Développement de A à Z (avec mon colocataire de l'époque, Eric BJARSTAL) d'un
 
 ### [Ski'UT V2](https://github.com/ski-utc) *(Mars 2025 → Fév. 2026)*
 
-Redéveloppement du projet, cette fois seul, pour le stabiliser et le rendre pérenne :
+Reprise du projet, cette fois seul, pour le stabiliser et le rendre pérenne :
 
 - CI/CD sur le frontend et le backend (dockerisation + pipeline de tests unitaires backend, ESLint + Prettier frontend)
 - Déploiement du backend dans des containers Docker auto-hébergés sur mon cluster Kubernetes personnel *(→ voir la section [Homelab k3s](#-projet-phare--homelab-kubernetes-auto-hébergé-k3s-project) ci-dessus)*
@@ -207,10 +209,10 @@ Le projet a par la suite entièrement tourné sur mon cluster Kubernetes.
 
 ### [Le Pic'Asso](https://github.com/picasso-utc) *(Printemps 2025, Automne 2026)*
 
-Bar et foyer étudiant de l'UTC. J'y ai d'abord travaillé sur la maintenance des systèmes informatiques et le développement de nouvelles fonctionnalités pour les équipes de trésorerie et pour les animations (Printemps 2025), puis j'y reviens à partir de l'Automne 2026 pour reprendre et fiabiliser l'ensemble des projets :
+Bar et foyer étudiant de l'UTC. J'y ai travaillé sur la maintenance des systèmes informatiques et le développement de nouvelles fonctionnalités pour les équipes de trésorerie et pour les animations (Printemps 2025) :
 
-- **Ocktopus** - [picasso-utc/ocktopus](https://github.com/picasso-utc/ocktopus) : backend Laravel/Filament pour l'organisation de l'association et les services de trésorerie + API pour l'app mobile
-- **Bach** - [picasso-utc/bach](https://github.com/picasso-utc/bach) : borne de paiement en React installée sur des Raspberry Pi, avec badgeuse NFC pour les cartes étudiantes et intégration Weezpay
+- **Ocktopus** - [picasso-utc/ocktopus](https://github.com/picasso-utc/ocktopus) : backend Laravel/Filament pour l'organisation de l'association et les services de trésorerie + API pour une future application mobile
+- **Bach** - [picasso-utc/bach](https://github.com/picasso-utc/bach) : borne de paiement en React, installée sur des Raspberry Pi, connectés à une badgeuse NFC, qui permet de lire les UID des cartes étudiantes par l'intermédiaire d'un applet Java tournant sur le Rasp, pour que l'application React puisse finalement faire la transaction de vente par l'intermédiaire du service "Weezpay"
 - Reprise de la documentation, mise à jour des projets, migration des Raspberry Pi 3 vers des Raspberry Pi 5 pour les bornes de vente et l'écran de diffusion
 
 <p style="display: flex; gap: 20px; justify-content: center;">
@@ -218,7 +220,7 @@ Bar et foyer étudiant de l'UTC. J'y ai d'abord travaillé sur la maintenance de
 <img src="./images/pic/ocktopus2.png" height="180" alt="Screenshot de l'interface admin du Pic" />
 </p>
 
-**TODO : screenshot des bornes de paiement + de l'app mobile**
+<!-- TODO : screenshot/photos d'autres échans d'ocktoupus, des bornes de paiement physique (les rasp+badgeuse), etc. -->
 
 ---
 
@@ -228,7 +230,6 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 
 - **UTCats** : webapp Filament pour la gestion des CATs - [mathisdlmr/UTCats](https://github.com/mathisdlmr/UTCats)
 - Debug et développement sur des projets d'infrastructure (majoritairement privés)
-- Participation à la migration **nginx/Apache → auto-hébergement k8s**, pour faire passer des applications historiquement en PHP vers du Node.js
 
 ---
 
@@ -251,79 +252,27 @@ Service Informatique de la Maison des Étudiants - hébergement et infra pour le
 > [!TIP]
 > La grande majorité des repos embarquent un Makefile et/ou un Dockerfile. N'hésite pas à les essayer !
 
-| Matière | Année | Projet | Description | Stack | Lien |
-|---|---|---|---|---|---|
-| **API Init, Introduction à Linux** | Automne 2023 | Space Invaders | Jeu Space Invaders dans le terminal | `Bash` | [mathisdlmr/Space-Invaders](https://github.com/mathisdlmr/Space-Invaders) |
-| **IC05, Analyse critique des données numériques** | Printemps 2024 | Scraper de Letterboxd | Scraper Letterboxd → PostgreSQL, puis nettoyage et analyse des données via Python | `Python` · `PostgreSQL` | [mathisdlmr/ic05](https://github.com/mathisdlmr/ic05) |
-| **NF18, Conception de BDD (non-)relationnelles** | Printemps 2024 | Projet de BDD | BDD d'un aéroport en relationnel puis non-relationnel, implémentée dans PostgreSQL | `PostgreSQL` · `Python` | [mathisdlmr/nf18](https://github.com/mathisdlmr/nf18) |
-| **SR04, Réseaux** | Automne 2024 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE` · `Zigbee` · `AMQP` · `MQTT` · `CoAP` | [voir plus bas ⤵](#sr04) |
-| **SR10, Introduction au développement web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) |
-| **IA02, Résolution de problèmes par algorithme** | Printemps 2025 | Résolution du morpion par algorithme | Implémentation d'un MCTS pour résoudre le jeu du morpion | `Python` | [mathisdlmr/ia02](https://github.com/mathisdlmr/ia02) |
-| **TX, projet** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) |
-| **SR03, Architecture des applications web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket | Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) |
-| **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) |
-
----
-
-### IC05
-
-<a href="./files/ic05.pdf">Voir le rapport du projet</a>
-
----
-
-### SR04
-
-<a href="./files/sr04-presentation.pdf">Voir la présentation du projet</a> | <a href="./files/sr04-rapport.pdf">Voir le rapport du projet</a>
-
----
-
-### IA02
-
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/ia02/ia02-3.gif" height="200" alt="Démo d'un MCTS" />
-</p>
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/ia02/ia02-1.png" height="200" alt="Élément de gameplay IA02" />
-  <img src="./images/ia02/ia02-2.png" height="200" alt="Élément de gameplay IA02" />
-</p>
-
----
-
-### TX
-
-<p style="display: flex; gap: 20px; justify-content: center;">
-  <img src="./images/tutut/tutut1.png" height="200" alt="Élément de l'interface de Tut'ut" />
-  <img src="./images/tutut/tutut2.png" height="200" alt="Élément de l'interface de Tut'ut" />
-</p>
-
-**TODO : ajouter des screenshots supplémentaires ici**
-
----
-
-### SR03
-
-<p style="display: flex; gap: 20px; justify-content: center;">
-<img src="./images/sr03/sr03-1.png" height="180" alt="Élément de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-2.png" height="180" alt="Élément de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-3.png" height="180" alt="Élément de l'interface du projet de SR03" />
-<img src="./images/sr03/sr03-4.png" height="180" alt="Élément de l'interface du projet de SR03" />
-</p>
-
-→ La majorité du projet porte sur la sécurité de l'application ainsi que l'utilisation de WebSockets.
-
----
-
-### SR05
-
-<a href="./files/sr05.pdf">Voir la présentation du projet</a>
+| Matière | Année | Projet | Description | Stack | Lien | Autre élément |
+|---|---|---|---|---|---|---|
+| **API Init, Introduction à Linux** | Automne 2023 | Space Invaders | Jeu Space Invaders dans le terminal | `Bash` | [mathisdlmr/Space-Invaders](https://github.com/mathisdlmr/Space-Invaders) | - |
+| **IC05, Analyse critique des données numériques** | Printemps 2024 | Scraper de Letterboxd | Scraper Letterboxd → PostgreSQL, puis nettoyage et analyse des données via Python | `Python` · `PostgreSQL` | [mathisdlmr/ic05](https://github.com/mathisdlmr/ic05) | <a href="./files/ic05.pdf">Voir le rapport du projet</a> |
+| **NF18, Conception de BDD (non-)relationnelles** | Printemps 2024 | Projet de BDD | BDD d'un aéroport en relationnel puis non-relationnel, implémentée dans PostgreSQL | `PostgreSQL` · `Python` | [mathisdlmr/nf18](https://github.com/mathisdlmr/nf18) | - |
+| **SR04, Réseaux** | Automne 2024 | Travail de recherche | Recherche sur l'IoT pour la santé | `BLE` · `Zigbee` · `AMQP` · `MQTT` · `CoAP` | <a href="./files/sr04-rapport.pdf">Voir le rapport du projet</a> | <a href="./files/sr04-presentation.pdf">Voir la présentation du projet</a> |
+| **SR10, Introduction au développement web** | Printemps 2025 | Plateforme de recrutement | Webapp style LinkedIn - gestion d'offres, candidatures, organisations, avec rôles admin/recruteur/candidat | `Express.js` · `EJS` · `SQLite` | [mathisdlmr/sr10](https://github.com/mathisdlmr/sr10) | - |
+| **IA02, Résolution de problèmes par algorithme** | Printemps 2025 | Résolution du morpion par algorithme | Implémentation d'un MCTS pour résoudre le jeu du morpion | `Python` | [mathisdlmr/ia02](https://github.com/mathisdlmr/ia02) | - |
+| **TX, projet** | Automne 2025 | Plateforme de gestion | Webapp Filament pour le programme de tutorat de l'UTC | `Laravel` · `Filament` | [mathisdlmr/Tutut](https://github.com/mathisdlmr/Tutut) | - |
+| **SR03, Architecture des applications web** | Printemps 2026 | Chat multi-utilisateurs en WebSocket | Application de chat avec panel admin, rooms temporaires, messages vocaux, photos et fichiers | `Spring Boot` · `React` · `WebSocket` | [mathisdlmr/sr03](https://github.com/mathisdlmr/sr03) | - |
+| **SR05, Systèmes répartis** | Printemps 2026 | Loup-garou distribué | Jeu du loup-garou décentralisé implémentant exclusion mutuelle distribuée et snapshots (horloges vectorielles) | `Go` | [mathisdlmr/sr05](https://github.com/mathisdlmr/sr05) | <a href="./files/sr05.pdf">Voir la présentation du projet</a> |
 
 ---
 
 ### Annexe : PHITECO
 
-_Au-delà des cours en informatique, j'ai suivi de nombreux autres cours dans le domaine des sciences cognitives ainsi que sur le lien entre technique et cognition. En parallèle de mon diplôme de génie informatique, je suis la mineure [PHITECO](https://sites.google.com/site/mineurphiteco/) (PHIlosophie, TEchnique et COgnition)._
+_Au-delà des cours en informatique, j'ai suivi de nombreux autres cours dans le domaine des sciences cognitives, ainsi que sur le lien entre technique et cognition. D'un point de vue diplomant, cela correspond à l'obtention de  parallèle de la mineure [PHITECO](https://sites.google.com/site/mineurphiteco/) (PHIlosophie, TEchnique et COgnition)._
 
-> PHITECO propose des éléments scientifiques, philosophiques et pratiques pour comprendre la manière dont les technologies transforment nos façons de penser, de percevoir, de raisonner, d'agir et d'interagir. Le mineur permet à l'étudiant-ingénieur d'être introduit aux grands enjeux, théoriques et pratiques, des sciences cognitives.
+> « PHITECO propose des éléments scientifiques, philosophiques et pratiques pour comprendre la manière dont les technologies transforment nos façons de penser, de percevoir, de raisonner, d'agir et d'interagir. Le mineur permet à l'étudiant-ingénieur d'être introduit aux grands enjeux, théoriques et pratiques, des sciences cognitives. » 
+
+Pour donner un simple exemple du champ d'étude de PHITECO, vous trouverez [ici]("./files/sc01.pdf") un mémoire réalisé avec ma camarade Lysandre FINTA--LAURENT dans le cadre du séminaire de la mineur PHITECO. Ce mémoire cherche à étudier l'impact des structure de classification de psychiatrie (DSM-V, CIM, RDoC, ...) sur leur utilisation dans leur domaine d'application (assurance, éducation, recherche, ...). Le fil rouge de ce mémoire se base sur les travaux de Jack GOODY concernant la raison graphique, ainsi que Bruno BACHIMONT concernant la raison computationnelle : l'écrit et l'informatique ne sont pas des outils neutres, ils conditionnent notre champ des possibles en termes d'actions et de cognition.
 
 ---
 
@@ -385,8 +334,11 @@ Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de serv
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="Git" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="40" alt="Docker" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" height="40" alt="Kubernetes" />
-<img src="https://www.redhat.com/rhdc/managed-files/helm.svg" height="40" alt="Helm" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/helm.svg" height="40" alt="Helm" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cilium.svg" height="40" alt="Cilium" />
 <img src="https://cdn.prod.website-files.com/5f10ed4c0ebf7221fb5661a5/5f2ba11e378c8f49e8b28486_argo.png" height="40" alt="ArgoCD" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/longhorn.svg" height="40" alt="Helm" />
+<img src="https://external-secrets.io/latest/pictures/eso-round-logo.svg" height="40" alt="External Secrets Operator" />
 <img src="https://miro.medium.com/v2/resize:fit:1400/1*7qk0-4XwCKWQO0GU5Hu39w.png" height="40" alt="GitHub Actions" />
 <img src="https://forge.inrae.fr/uploads/-/system/project/avatar/6031/gitlab-ci.png" height="40" alt="GitLab CI" />
 </p>
@@ -396,9 +348,14 @@ Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de serv
 <p style="display: flex; gap: 20px;">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" height="40" alt="Prometheus" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" height="40" alt="Grafana" />
-<img src="https://grafana.com/media/docs/loki/logo-grafana-loki.png" height="40" alt="Loki" />
-<img src="https://grafana.com/media/docs/alloy/alloy_icon.png" height="40" alt="Alloy" />
-<img src="https://thanos.io/icon-dark.png" height="40" alt="Thanos" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alloy.svg" height="40" alt="Alloy" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/loki.svg" height="40" alt="Loki" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tempo.svg" height="40" alt="Tempo" />
+<img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/elasticsearch.svg" height="40" alt="Elasticsearch" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/elastic-kibana.svg" height="40" alt="Kibana" />
+<img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_800/https%3A%2F%2Fdashboard.snapcraft.io%2Fsite_media%2Fappmedia%2F2020%2F02%2Flogo-square.png" height="40" alt="Fluentbit" />
+<!-- TODO : Victoria Metrics, Kibana -->
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/thanos.svg" height="40" alt="Thanos" />
 </p>
 
 ### Bases de données
@@ -417,11 +374,14 @@ Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de serv
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/traefikproxy/traefikproxy-original.svg" height="40" alt="Traefik" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" height="40" alt="Nginx" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" height="40" alt="Apache" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" height="40" alt="Ansible" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" height="40" alt="Terraform" />
-<img src="https://raw.githubusercontent.com/cert-manager/cert-manager/ae6723401bd1bef1c00bd3c46a52c15387cd05ba/logo/logo.svg" height="40" alt="Cert-Manager" />
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/cert-manager.svg" height="40" alt="Cert-Manager" />
 </p>
 
-_Prochainement : ESO, Longhorn, Ansible, EFK eph, Fluentd, Kibana, Cilium, Mimir_
+_Prochainement :_
+* _Assos : Pic A26 ? TX Kubernetes ?_
+* _Projets : Cyber-résilience en SR07 ? Cloud en SR08 ?_
 
 ---
 
