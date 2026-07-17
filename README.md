@@ -8,6 +8,8 @@
 > - Backend *(design patterns, résilience, scalabilité)*
 > - DevOps
 
+---
+
 Salut ! Moi c'est **Mathis Delmaere**, étudiant en génie informatique à l'**Université de Technologie de Compiègne (UTC)**, filière **Ingénierie des Systèmes Informatiques (ISI)** (Promo 2022).
 
 Je code majoritairement pour apprendre, découvrir de nouvelles technos et systèmes informatiques (backend, infra ou réseau), ou pour des associations de mon école.
@@ -209,7 +211,6 @@ Bar et foyer étudiant de l'UTC. J'y ai d'abord travaillé sur la maintenance de
 
 - **Ocktopus** - [picasso-utc/ocktopus](https://github.com/picasso-utc/ocktopus) : backend Laravel/Filament pour l'organisation de l'association et les services de trésorerie + API pour l'app mobile
 - **Bach** - [picasso-utc/bach](https://github.com/picasso-utc/bach) : borne de paiement en React installée sur des Raspberry Pi, avec badgeuse NFC pour les cartes étudiantes et intégration Weezpay
-- **[app-pic](https://github.com/mathisdlmr/app-pic)** : application mobile du Pic'Asso, développée de A à Z, branchée sur l'API du backend existant
 - Reprise de la documentation, mise à jour des projets, migration des Raspberry Pi 3 vers des Raspberry Pi 5 pour les bornes de vente et l'écran de diffusion
 
 <p style="display: flex; gap: 20px; justify-content: center;">
@@ -420,7 +421,7 @@ Plateforme d'entraide locale entre étudiants : prêt d'objets, échange de serv
 <img src="https://raw.githubusercontent.com/cert-manager/cert-manager/ae6723401bd1bef1c00bd3c46a52c15387cd05ba/logo/logo.svg" height="40" alt="Cert-Manager" />
 </p>
 
-_Prochainement : Longhorn, Ceph, Fluentd, Kibana, Cilium, Mimir, Kong Gateway_
+_Prochainement : ESO, Longhorn, Ansible, EFK eph, Fluentd, Kibana, Cilium, Mimir_
 
 ---
 
