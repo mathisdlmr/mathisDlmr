@@ -87,25 +87,25 @@ For the cluster, I went with a DevOps approach that's fully reproducible in just
 
 The cluster is first bootstrapped by Ansible, which runs on my laptop and configures each NUC to become a (secured) node
 
-![Node configuration](./images/k3s/setup/1-node-configuration.png)
+<img src="./images/k3s/setup/1-node-configuration.png" alt="Node configuration" width="100%"/>
 
 Once the setup is complete, this is the resulting architecture:
 
-![Architecture after node configuration](./images/k3s/setup/1-nodes-configured.png)
+<img src="./images/k3s/setup/1-nodes-configured.png" alt="Architecture after node configuration" width="100%"/>
 
 The next step is installing an ArgoCD application that takes over management of the ArgoCD instance installed by Ansible, and handles deploying the rest of the repo through the `meta` application
 
-![ArgoCD Setup](./images/k3s/setup/2-argocd-setup.png)
+<img src="./images/k3s/setup/2-argocd-setup.png" alt="ArgoCD Setup" width="100%"/>
 
 Finally, all that's left is to pull in the secrets. For that, I create a Kubernetes secret called `infisical-universal-auth-credentials`, which lets External Secrets Operator authenticate with Infisical and then recreate every secret defined in the repo (logins, Cloudflare tunnel, etc.)
 
-![Secrets recreation](./images/k3s/setup/3-recreate-secrets.png)
+<img src="./images/k3s/setup/3-recreate-secrets.png" alt="Secrets recreation" width="100%"/>
 
 And there it is, the cluster is rebuilt from scratch!
 
 The services are then reachable online at `https://mdlmr.fr/*`. And for a bit more visibility into how that works, here's one last diagram ;)
 
-![Request flow](./images/k3s/setup/4-request-flow.png)
+<img src="./images/k3s/setup/4-request-flow.png" alt="Request Flow" width="100%"/>
 
 ### Maintenance - CI/CD and GitOps
 
